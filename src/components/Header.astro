@@ -1,0 +1,126 @@
+---
+---
+
+<header>
+	<nav class="bg-white">
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/#nosotros">Nosotros</a>
+			</li>
+			<li>
+				<a href="/#music">Música</a>
+			</li>
+			<li>
+				<a href="/#shows">Shows</a>
+			</li>
+			<li>
+				<a href="/"><img src= alt="" /></a>
+			</li>
+			<li>
+				<a href="/apoyos">Apoyos</a>
+			</li>
+			<li>
+				<a href="/#shows">Media</a>
+			</li>
+			<li>
+				<a href="/#contacto">Contacto</a>
+			</li>
+			<li>
+				<a href="https://blacksmokeuy.myshopify.com/" target="_blank">Tienda</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	header {
+		position: fixed;
+		right: 50%;
+		width: 100%;
+		transform: translateX(50%);
+		z-index: 1000;
+	}
+
+	nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		--background: white;
+	}
+
+	.scroll {
+		background-color: var(--color-black);
+		box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+	}
+
+	.home {
+		background-color: transparent;
+		box-shadow: none;
+
+		& a {
+			color: white;
+
+			&:hover {
+				color: white;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	img {
+		max-width: 200px;
+	}
+
+	ul {
+		width: 100%;
+		margin: 0;
+		position: relative;
+		padding: 20px 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		background: var(--color-black);
+		background-size: contain;
+		box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+		gap: 15px;
+	}
+
+	li {
+		position: relative;
+		height: 100%;
+	}
+
+	/* li[aria-current='page']::before {
+		--size: 6px;
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: calc(50% - var(--size));
+		border: var(--size) solid transparent;
+		border-top: var(--size) solid var(--color-red);
+	} */
+
+	nav a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 0.5rem;
+		color: var(--color-white);
+		font-weight: 700;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: color 0.2s linear;
+	}
+
+	a:hover {
+		color: var(--color-red);
+	}
+</style>
