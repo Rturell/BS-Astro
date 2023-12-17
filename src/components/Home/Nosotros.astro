@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import bandPic from '../../img/ModoCasona.webp'
+---
+
+
+<div id="nosotros">
+    <div class="container">
+        <div class="grid gap-10 grid-cols-1 lg:grid-cols-2">
+            <div class="mb-8 lg:mb-0">
+                <h2>Black Smoke</h2>
+                <hr />
+                <p>
+                    Si querés estar al tanto de todas nuestras novedades, estás
+                    en el lugar correcto!
+                </p>
+                <p>
+                    Somos una banda de Hard Rock formada a mediados del 2014 por
+                    Rodrigo Turell y Andres Nion. Nos influencian bandas como
+                    Deep Purple, Rata Blanca, Whitesnake, Glenn Hughes, Led
+                    Zeppelin, H.E.A.T y un montón de bandas más. Editamos dos
+                    discos, hemos tocado en todo el circuito montevideano, en
+                    varios departamentos del interior y teloneado a bandas de
+                    renombre como Rata Blanca (Argentina), Mr. Big (EE.UU) y
+                    Enforcer (Suecia). A fines del 2019 realizamos una gira por
+                    Chile que nos llevó a ciudades como Iquique, Santiago de
+                    Chile, Valdivia y Temuco.
+                </p>
+                <p>
+                    Actualmente estamos en proceso de composición y grabación de
+                    nuestro tercer disco. Podés darnos una mano para financiar
+                    la grabación invitándonos una cervecita <a
+                        href="https://blacksmokeuy.myshopify.com/products/cerveza"
+                        target="_blank">acá!</a
+                    > 😉
+                </p>
+            </div>
+            <div class="flex justify-center items-center">
+                <Image src={bandPic} alt="Black Smoke pic"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    hr {
+        color: var(--color-white);
+        width: 50%;
+    }
+
+    h2 {
+        color: var(--color-white);
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: var(--color-white);
+        max-width: 70ch;
+        margin-bottom: 15px;
+    }
+
+    img {
+        width: 600px;
+        max-width: 100%;
+        border: 10px solid var(--color-white);
+        rotate: -6deg;
+        border-radius: 10px;
+    }
+
+    img:hover {
+        cursor:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔥</text></svg>")
+                16 0,
+            auto;
+    }
+</style>

@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import artWork from "../../src/img/HastaElFinalDisc.jpg";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 mb-8 gap-10 items-center">
+    <div>
+        <Image class="mb-5" src={artWork} alt="Hasta el final Arte de tapa" />
+    </div>
+    <div>
+        <div class="disc-header flex flex-wrap justify-between items-center">
+            <h2 class="font-bold">Hasta el Final</h2>
+            <div class="flex gap-4">
+                <a
+                    target="_blank"
+                    class="primary-btn"
+                    href="https://blacksmokeuy.myshopify.com/products/hasta-el-final-disco-digital-wav"
+                    >Comprar Disco Digital
+                </a>
+                <a
+                    class="primary-btn"
+                    href="https://blacksmoke.fanlink.to/HastaElFinal-BlackSmoke"
+                    target="_blank">Stream Álbum</a
+                >
+            </div>
+        </div>
+        <hr />
+        <p class="text-album mb-3">
+            <a
+                href="https://music.youtube.com/watch?v=2ioaUs5jrak&feature=share"
+                target="blank">01. Tu Verdad</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=bbADNsCBWcc&feature=share"
+                target="blank">02. Así Soy</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=PR7LyPxNKAM&feature=share"
+                target="blank">03. En Mis Sueños</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=PBMcpXJtVCo&feature=share"
+                target="blank">04. Hasta el Final</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=Dud0YEda_1I&feature=share"
+                target="blank">05. Tu Canción</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=m_tcNoGmHjU&feature=share"
+                target="blank">06. Desarmando la Ilusión</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=mXAV-EvPnts&feature=share"
+                target="blank">07. Vivo</a
+            >
+            <a
+                href="https://music.youtube.com/watch?v=T0ncihMdelg&feature=share"
+                target="blank">08. Cuando todo cae</a
+            >
+        </p>
+
+        <div class="credits text-sm">
+            <p>(2019) Todas las letras escritas por Rodrigo Turell Alayón.</p>
+            <p>
+                Tema 1, 3, 6, 7 y 8 compuesto por Rodrigo Turell Alayón y Andrés
+                Nion Valanzano.
+            </p>
+            <p>Tema 2, 4 y 5 compuesto por Rodrigo Turell Alayón.</p>
+            <p>
+                Mezclado por Carlos Fonsalía (Santiago de Chile). Masterizado en
+                La Nave de Oseberg por Martin Toledo (Buenos Aires, Argentina).
+                Arte de tapa y diseño gráfico Rodrigo Turell Alayón.
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        border: 15px solid white;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-album {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        display: inline;
+        width: fit-content;
+        margin-bottom: 5px;
+        color: var(--color-text);
+    }
+
+    a:hover {
+        color: var(--color-red);
+        text-decoration: none;
+    }
+
+    .credits {
+        & p {
+            margin: 0 !important;
+        }
+    }
+</style>

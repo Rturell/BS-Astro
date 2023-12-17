@@ -1,0 +1,48 @@
+---
+import BlackSmokeDisc from "../BlackSmokeDisc.astro";
+import HastaElFinalDisc from "../HastaElFinalDisc.astro";
+---
+
+<div id="music">
+	<div class="container">
+
+		<!-- Hasta el Final -->
+		<HastaElFinalDisc/>
+
+		<!-- Black Smoke -->
+		<BlackSmokeDisc/>
+
+		<!-- Miembros -->
+		<div class="mt-10">
+			<h3 class="font-bold mb-3">Black Smoke es:</h3>
+			<p>Gonzalo Núñez: Voz</p>
+			<p>Andres Nion: Guitarra</p>
+			<p>Rodrigo Turell: Bajo</p>
+			<p>Diego Spinelli: Batería</p>
+		</div>
+
+		<!-- Spotify -->
+		<div class="spotify-player mt-10">
+			<iframe
+				title="Black Smoke Spotify"
+				style="border-radius:12px"
+				src="https://open.spotify.com/embed/artist/0zasdvklx3VEacoHL4fjnQ?utm_source=generator&theme=0"
+				width="100%"
+				height="750"
+				frameBorder="0"
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			></iframe>
+		</div>
+	</div>
+</div>
+
+<style>
+	#music {
+		background-color: whitesmoke;
+	}
+
+	p {
+		margin: 0;
+	}
+</style>

@@ -1,8 +1,31 @@
 ---
-import Shows from '../components/Shows.astro';
+import Shows from '../components/Home/Shows.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Home/Hero.astro'
+import Nosotros from '../components/Home/Nosotros.astro'
+import Musica from '../components/Home/Musica.astro'
+import Contacto from '../components/Home/Contacto.astro'
 ---
 
 <Layout title="Black Smoke">
-	<Shows/>
+	<div class="main">
+		<Hero/>
+		<Nosotros/>
+		<Musica/>
+		<Shows/>
+		<Contacto/>
+	</div>
 </Layout>
+
+
+<style>
+	.main {
+		background-color: var(--color-black);
+		background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%),
+			url('../img/black-texture.webp');
+		background-position: center;
+		background-position: top;
+		background-repeat: repeat-y;
+	}
+</style>
+
