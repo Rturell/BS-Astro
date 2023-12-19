@@ -1,5 +1,7 @@
 ---
 import BannerTop from "./BannerTop.astro";
+import { Image } from 'astro:assets';
+import logo from '../img/logo.png'
 ---
 
 <script
@@ -7,10 +9,7 @@ import BannerTop from "./BannerTop.astro";
 	defer
 ></script>
 
-
-
-
-<div class="fixed z-50 w-full text-white bg-black">
+<div class="fixed z-50 w-full text-white bg-black shadow">
 
 	<BannerTop/>
 
@@ -19,7 +18,7 @@ import BannerTop from "./BannerTop.astro";
 			<a
 				href="#"
 				class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
-				>Black Smoke</a
+				> <Image class="h-[30px] w-[200px] object-contain" src={logo} alt="Black Smoke Logo"/> </a
 			>
 			<button
 				class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline"
@@ -45,7 +44,7 @@ import BannerTop from "./BannerTop.astro";
 		>
 			<a
 				class="uppercase px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-				href="#nosotros">Nosotros</a
+				href="/#nosotros">Nosotros</a
 			>
 			<a
 				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"

@@ -4,7 +4,11 @@ const posts = await Astro.glob("../../pages/news/*.md");
 
 <div id="news">
     <div class="container">
-        <h2 class="mb-4">Noticias</h2>
+        <div class="flex justify-between mb-4">
+            <h2>Noticias</h2>
+            <a href="/allnews" class="secondary-btn">Ver Todas</a>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {
                 posts.slice(0, 3).map((post) => (

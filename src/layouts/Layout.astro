@@ -166,10 +166,31 @@ button:focus:not(:focus-visible) {
 	border-radius: 0;
 	box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
 }
-
 .primary-btn:hover {
 	background-color: var(--color-white);
 	color: var(--color-black) !important;
 	border: 1px solid var(--color-black);
+}
+
+
+.secondary-btn {
+	padding: 10px 10px;
+	background-color: var(--color-white);
+	color: var(--color-black);
+	height: fit-content;
+	border: 1px solid var(--color-white);
+	text-decoration: none;
+}
+
+.secondary-btn:active,
+.secondary-btn:focus-visible,
+.secondary-btn:focus,
+.secondary-btn:hover {
+	background-color: var(--color-black);
+	color: var(--color-white) !important;
+	height: fit-content;
+	border: 1px solid var(--color-white);
+	border-radius: 0;
+	box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
 }
 </style>

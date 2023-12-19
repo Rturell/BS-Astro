@@ -3,25 +3,26 @@ import { Image } from "astro:assets";
 import artWork from "../../src/img/BlackSmokeDisc.jpg";
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+<div class="disc">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
         <div class="disc-header flex flex-wrap justify-between items-center">
-            <h2 class="font-bold">Black Smoke</h2>
+            <h2 class="font-bold text-base mb-4">Black Smoke</h2>
             <div class="flex gap-4">
                 <a
                     target="_blank"
-                    class="primary-btn"
+                    class="primary-btn text-sm"
                     href="https://blacksmokeuy.myshopify.com/products/black-smoke-disco-digital"
                     >Comprar Disco Digital
                 </a>
                 <a
-                    class="primary-btn"
+                    class="primary-btn text-sm"
                     href="https://blacksmoke.fanlink.to/black-smoke"
                     target="_blank">Stream Album</a
                 >
             </div>
         </div>
-        <hr />
+         <hr / class="my-8">
         <p class="text-album mb-3">
             <a
                 href="https://music.youtube.com/watch?v=6oGudjDsoGs&list=RDAMVM6oGudjDsoGs"
@@ -68,8 +69,14 @@ import artWork from "../../src/img/BlackSmokeDisc.jpg";
         <Image src={artWork} alt="Arte de tapa del primer disco de Black Smoke" />
     </div>
 </div>
+</div>
+
 
 <style>
+
+    .disc {
+        margin-top: 5rem;
+    }
     img {
         width: 100%;
         height: auto;
