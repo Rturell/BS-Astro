@@ -1,128 +1,81 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../../src/img/logo.png'
+import BannerTop from "./BannerTop.astro";
 ---
 
-<header>
-	<nav class="bg-white">
-		<ul>
-			<li>
-				<a href="/">Home</a>
-			</li>
-			<li>
-				<a href="/#nosotros">Nosotros</a>
-			</li>
-			<li>
-				<a href="/#music">Música</a>
-			</li>
-			<li>
-				<a href="/#shows">Shows</a>
-			</li>
-			<li>
-				<a href="/"><Image src={logo} alt="Black Smoke logo"/></a>
-			</li>
-			<li>
-				<a href="/apoyos">Apoyos</a>
-			</li>
-			<li>
-				<a href="/#shows">Media</a>
-			</li>
-			<li>
-				<a href="/#contacto">Contacto</a>
-			</li>
-			<li>
-				<a href="https://blacksmokeuy.myshopify.com/" target="_blank">Tienda</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+<script
+	src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+	defer
+></script>
+
+
+
+
+<div class="fixed z-50 w-full text-white bg-black">
+
+	<BannerTop/>
+
+	<div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto lg:items-center lg:justify-between md:flex-row md:px-6 lg:px-8">
+		<div class="w-full p-4 flex flex-row items-center justify-between">
+			<a
+				href="#"
+				class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
+				>Black Smoke</a
+			>
+			<button
+				class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline"
+				@click="open = !open"
+			>
+				<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+					<path
+						x-show="!open"
+						fill-rule="evenodd"
+						d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+						clip-rule="evenodd"></path>
+					<path
+						x-show="open"
+						fill-rule="evenodd"
+						d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</div>
+		<nav
+			:class="{'flex': open, 'hidden': !open}"
+			class="flex-col flex-grow pb-4 lg:pb-0 hidden lg:flex lg:justify-end lg:flex-row"
+		>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="#nosotros">Nosotros</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="/#music">Música</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="/#shows">Shows</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="/apoyos">Apoyos</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="/#news">Noticias</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="/#contacto">Contacto</a
+			>
+			<a
+				class="uppercase px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+				href="https://blacksmokeuy.myshopify.com/"
+				target="_blank">Tienda</a
+			>
+		</nav>
+	</div>
+</div>
 
 <style>
-	header {
-		position: fixed;
-		right: 50%;
-		width: 100%;
-		transform: translateX(50%);
-		z-index: 1000;
-	}
 
-	nav {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		--background: white;
-	}
-
-	.scroll {
-		background-color: var(--color-black);
-		box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-	}
-
-	.home {
-		background-color: transparent;
-		box-shadow: none;
-
-		& a {
-			color: white;
-
-			&:hover {
-				color: white;
-				text-decoration: underline;
-			}
-		}
-	}
-
-	img {
-		max-width: 200px;
-	}
-
-	ul {
-		width: 100%;
-		margin: 0;
-		position: relative;
-		padding: 20px 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--color-black);
-		background-size: contain;
-		box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-		gap: 15px;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	/* li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-red);
-	} */
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-white);
-		font-weight: 700;
-		font-size: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
-	}
-
-	a:hover {
-		color: var(--color-red);
-	}
 </style>
