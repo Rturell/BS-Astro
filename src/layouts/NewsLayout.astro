@@ -1,0 +1,92 @@
+---
+import Footer from "../components/Footer.astro";
+const { frontmatter } = Astro.props;
+---
+
+<html>
+    <head>
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <div class="p-10 mt-10 m-auto max-w-2xl">
+            <div class="mb-[70px]">
+                <a class="text-white back-btn" href="/#news"
+                    >Volver a Noticias</a
+                >
+            </div>
+
+            <div class="text-white text-sm pb-2">{frontmatter.date}</div>
+            <h1 class="text-5xl mb-8">{frontmatter.title}</h1>
+            <img
+                class="mb-8 h-[300px] w-[100%] object-cover object-top"
+                src={frontmatter.img}
+                alt={frontmatter.alt}
+            />
+            <div class="content">
+                <slot />
+            </div>
+        </div>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    :root {
+        --font-body: "Libre Franklin", sans-serif;
+        --font-title: "Playfair Display SC", serif;
+        --font-mono: "Fira Mono", monospace;
+
+        --color-black: black;
+        --color-black-light: rgb(48, 48, 48);
+        --color-red: #912f2f;
+        --color-yellow: #fac43d;
+        --color-white: white;
+        --color-text: rgb(48, 48, 48);
+        --color-link: #b92323;
+        font-family: var(--font-body);
+        color: var(--color-text);
+    }
+
+    body {
+        background-color: black;
+    }
+
+    header {
+        position: relative !important;
+    }
+
+    .container {
+        width: 90% !important;
+        max-width: 1450px !important;
+        margin: auto;
+        color: var(--color-text);
+        padding: 8rem 0 8rem 0;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    .content {
+        color: white;
+    }
+
+    p {
+        color: white;
+        margin-bottom: 50px;
+    }
+
+    .back-btn {
+        border: 1px solid white;
+        padding: 10px;
+        margin-bottom: 50px;
+    }
+
+    .back-btn:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        padding: 10px;
+        margin-bottom: 50px;
+    }
+</style>

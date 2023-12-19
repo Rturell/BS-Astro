@@ -1,0 +1,42 @@
+---
+const posts = await Astro.glob("../../pages/news/*.md");
+---
+
+<div id="news">
+    <div class="container">
+        <h2 class="mb-4">Ultimas Noticias</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {
+                posts.slice(0, 3).map((post) => (
+                    <article>
+                        <div class="card">
+                            <div class="">{post.frontmatter.date}</div>
+                            <h3 class="font-bold text-xl my-2">
+                                {post.frontmatter.title}
+                            </h3>
+                            <p class="mb-5">{post.frontmatter.description}</p>
+                            <a class="primary-btn" href={post.url}>
+                                Leer Más
+                            </a>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    h2 {
+        color: var(--color-white);
+    }
+    h3 {
+        color: var(--color-red);
+    }
+
+    .card {
+        background-color: var(--color-white);
+        border-radius: 10px;
+        padding: 30px;
+    }
+</style>
