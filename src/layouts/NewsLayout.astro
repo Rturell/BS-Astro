@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
         <title>{frontmatter.title}</title>
     </head>
     <body>
-        <div class="p-10 mt-10 m-auto max-w-2xl">
+        <div class="container p-10 mt-10 m-auto">
             <div class="mb-[70px]">
                 <a class="text-white back-btn" href="/#news"
                     >Volver a Noticias</a
@@ -57,7 +57,7 @@ const { frontmatter } = Astro.props;
 
     .container {
         width: 90% !important;
-        max-width: 1450px !important;
+        max-width: 800px !important;
         margin: auto;
         color: var(--color-text);
         padding: 8rem 0 8rem 0;
@@ -69,6 +69,7 @@ const { frontmatter } = Astro.props;
 
     .content {
         color: white;
+        font-size: 1.2rem;
     }
 
     p {
