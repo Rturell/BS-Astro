@@ -20,3 +20,24 @@ También vamos a crear un **¨Mejores Amigos”** en instagram con todos los que
 </br>
 
 ¿Nos invitas una cerveza? 🍺
+
+</br>
+
+<a href="https://blacksmokeuy.myshopify.com/products/cerveza" class="secondary-btn" target="_blank">
+    Invitar Cerveza!
+</a>
+
+<style>
+    .secondary-btn {
+        border: 1px solid white;
+        padding: 10px;
+    }
+
+     .secondary-btn:hover {
+        background-color: white;
+        color: black;
+        margin-top:10px;
+        border: 1px solid white;
+        padding: 10px;
+    }
+</style>
