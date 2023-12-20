@@ -1,16 +1,23 @@
 <div class="home"></div>
-<div class="new-single">
-    <p>BLACK SMOKE</p>
-    <p class="new-single-title">Hasta el Final</p>
-    <a class="new-single-btn" href="https://blacksmoke.fanlink.to/HastaElFinal-BlackSmoke" target="_blank">Stream</a>
+<div class="home-container">
+    <div class="new-single">
+        <p>BLACK SMOKE</p>
+        <p class="new-single-title">Hasta el Final</p>
+        <a
+            class="new-single-btn"
+            href="https://blacksmoke.fanlink.to/HastaElFinal-BlackSmoke"
+            target="_blank">Stream</a
+        >
+    </div>
 </div>
 
 <style>
     .home {
+        position: relative;
         text-align: center;
         color: white;
         width: 100%;
-        height: 100vh;
+        height: 620px;
         background: linear-gradient(
                 to bottom,
                 rgba(0, 0, 0, 0.6),
@@ -27,10 +34,12 @@
             18.8% 100%,
             0% 100%
         );
-        background-position: 50% 30%;
+        background-position: 60% 30%;
         background-size: cover;
 
         @media (min-width: 780px) {
+            height: 100vh;
+            background-position: 50% 30%;
             clip-path: polygon(
                 0% 1%,
                 100% 0%,
@@ -44,12 +53,24 @@
         }
     }
 
+    .home-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 620px;
+        width: 100%;
+
+        @media (min-width: 780px) {
+            height: 100vh;
+        }
+    }
+
     .new-single {
         display: flex;
         flex-direction: column;
         gap: 10px;
         position: absolute;
-        bottom: 8%;
+        bottom: 5%;
         right: 5%;
         z-index: 999;
         text-align: center;
