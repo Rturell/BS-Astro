@@ -1,0 +1,74 @@
+---
+import InstagramIcon from "svelte-icons/fa/FaInstagram.svelte";
+import TwitterIcon from "svelte-icons/fa/FaTwitter.svelte";
+import FacebookIcon from "svelte-icons/fa/FaFacebookSquare.svelte";
+import SpotifyIcon from "svelte-icons/fa/FaSpotify.svelte";
+import YoutubeIcon from "svelte-icons/fa/FaYoutube.svelte";
+---
+
+<div class="social-icons">
+    <a
+        class="icons"
+        href="https://open.spotify.com/artist/0zasdvklx3VEacoHL4fjnQ"
+        target="_blank"
+    >
+        <SpotifyIcon />
+    </a>
+    <a
+        class="icons"
+        href="https://www.youtube.com/blacksmokeuy"
+        target="_blank"
+    >
+        <YoutubeIcon />
+    </a>
+    <a
+        class="icons"
+        href="https://www.instagram.com/blacksmokeuy"
+        target="_blank"
+    >
+        <InstagramIcon />
+    </a>
+    <a class="icons" href="https://twitter.com/blacksmokeuy" target="_blank">
+        <TwitterIcon />
+    </a>
+    <a
+        class="icons"
+        href="https://www.facebook.com/blacksmokeuy"
+        target="_blank"
+    >
+        <FacebookIcon />
+    </a>
+</div>
+
+<style>
+    .social-icons {
+        position: absolute;
+        top: 85%;
+        right: 5%;
+        transform: translate(-3%, -50%);
+
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        @media (min-width: 980px) {
+            flex-direction: column;
+            top: 50%;
+            right: 93%;
+            transform: translate(-3%, -50%);
+            background-color: var(--color-black);
+            border-radius: 10px;
+            padding: 30px 20px;
+        }
+    }
+
+    .icons {
+        color: var(--color-white);
+        width: 24px;
+        height: 24px;
+    }
+
+    .icons:hover {
+        color: var(--color-red);
+    }
+</style>
