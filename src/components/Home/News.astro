@@ -11,7 +11,7 @@ const posts = await Astro.glob("../../pages/news/*.md");
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {
-                posts.slice(0, 3).map((post) => (
+                posts.reverse().slice(0, 3).map((post) => (
                     <article>
                         <div class="card">
                             <div class="">{post.frontmatter.date}</div>
