@@ -5,7 +5,7 @@ date: 20/01/24
 title: Black Smoke En Perspectiva.
 img: 'https://i.ibb.co/kJBg4C3/Black-Smoke-En-Perspectiva.png'
 alt: Andres Nion y Rodrigo Turell en los estudios de En Perspectiva
-description: El Viernes 19 de enero fuimos invitados por Gabriela Pintos a su espacio ¨La Conversación¨ de En Perspectiva....
+description: El Viernes 19 de enero fuimos invitados por Gabriela Pintos a su espacio ¨La Conversación¨ dentro de En Perspectiva....
 ---
 
 <p>
