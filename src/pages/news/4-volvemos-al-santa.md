@@ -23,7 +23,7 @@ Esta vez la cita es el Sábado 15 de Junio en <a href="https://maps.app.goo.gl/m
 Vamos a estar tocando temas de nuestros dos primeros discos, mucha cosita nueva y alguna balada acústica.
 
 
-No se duerman en reservar mesa. Para hacerlo simplemente se comunican con Galar Bar enviandoles un mensaje interno a su cuenta de <a href="https://www.instagram.com/galar_bar" target="_blank">Instagram.</a> 
+No se duerman en reservar mesa. Para hacerlo simplemente se comunican con Galar Bar enviándoles un mensaje interno a su cuenta de <a href="https://www.instagram.com/galar_bar" target="_blank">Instagram.</a> 
 
 
 Nos vemos ahí?
