@@ -26,7 +26,7 @@ Nos vemos en Agosto!!
 
 <small>Update: 2/08/24</small>
 
-Finalmente tenemos afiche y entadas! Si estás con ganas de ir podés comprar tu entrada <a href="https://centralticket.net/event/3066?prefer=155209" target="_blank">ACÁ.</a>
+Finalmente tenemos afiche y entradas! Si estás con ganas de ir podés comprar tu entrada <a href="https://centralticket.net/event/3066?prefer=155209" target="_blank">ACÁ.</a>
 
 No queda nada, nos vemos en BsAs!!  🔥🔥 
 
