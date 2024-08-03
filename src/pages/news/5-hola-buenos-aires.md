@@ -26,15 +26,14 @@ Nos vemos en Agosto!!
 
 <small>Update: 2/08/24</small>
 
-Finalmente tenemos afiche! 
+Finalmente tenemos afiche y entadas! Si estás con ganas de ir podés comprar tu entrada <a href="https://centralticket.net/event/3066?prefer=155209" target="_blank">ACÁ.</a>
+
+No queda nada, nos vemos en BsAs!!  🔥🔥 
+
 
 ![Afiche del show. Sábado 15 de Junio Black Smoke en Galar Bar](https://i.ibb.co/F03vPbr/Afiche-Melonio-Bar.jpg)
 
 
-Las entradas son muy económicas y las pueden comprar <a href="https://centralticket.net/event/3066?prefer=155209" target="_blank">ACÁ</a>
-
-
-Ya queda nada, nos vemos en BsAs!!  🔥🔥 
 
 
 
