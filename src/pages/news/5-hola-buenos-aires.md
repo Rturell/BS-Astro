@@ -17,14 +17,24 @@ Pero vamos a lo que importa. El Viernes 23 de Agosto vamos a tocar por primera v
 
 La cita va a ser en <a href="https://www.instagram.com/meloniobar/" target="_blank">Melonio Bar</a> a las 22:30 h aproximadamente. 
 
-<br>
-
-![Afiche del show. Sábado 15 de Junio Black Smoke en Galar Bar](https://i.ibb.co/Sc31htM/Argentina.png)
-
-
 Vamos a compartir escenario con otras bandas asi que a medida que se vayan confirmando vamos a ir actualizando esta noticia, afiche, costo de entradas y como las pueden ir adquiriendo. 
 
-Nos vemos en Agosto!! 🔥🔥 
+Nos vemos en Agosto!!
+
+--- 
+<br>
+
+<small>Update: 2/08/24</small>
+
+Finalmente tenemos afiche! 
+
+![Afiche del show. Sábado 15 de Junio Black Smoke en Galar Bar](https://i.ibb.co/F03vPbr/Afiche-Melonio-Bar.jpg)
+
+
+Las entradas son muy económicas y las pueden comprar <a href="https://centralticket.net/event/3066?prefer=155209" target="_blank">ACÁ</a>
+
+
+Ya queda nada, nos vemos en BsAs!!  🔥🔥 
 
 
 
