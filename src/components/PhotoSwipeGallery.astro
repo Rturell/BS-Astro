@@ -1,87 +1,82 @@
 ---
 import { Image } from "astro:assets";
-import BAND2 from "../../src/img/BAND2.webp";
+import Band2 from "../../src/img/BAND2.webp";
+import Gonza from "../../src/img/gallery/Gonza.jpg";
+import Ro2 from "../../src/img/gallery/Ro2.jpg";
+import Andres from "../../src/img/gallery/Andres.jpg";
+import Diego1 from "../../src/img/gallery/Diego1.jpg";
+import CaroMavi from "../../src/img/gallery/CaroMavi.jpg";
+import GonzaAndres from "../../src/img/gallery/GonzaAndres.jpeg";
+import Andres2 from "../../src/img/gallery/Andres2.jpg";
+import Diego2 from "../../src/img/gallery/Diego2.jpg";
+import ModoCasona from "../../src/img/ModoCasona.webp";
+import todos from "../../src/img/gallery/todos.jpg";
 ---
 
 <div id="gallery">
   <div id="gallery-photoswipe">
     <!-- Banda -->
     <a
-      href="/src/img/media/BAND2.webp"
+      href={Band2.src}
       data-pswp-width="4060"
       data-pswp-height="2700"
       target="_blank"
     >
-      <Image src={BAND2} alt={"alt"} width={350} height={350} />
+      <Image src={Band2} alt={"alt"} width={4060} height={2700} />
     </a>
     <!-- Gonza -->
     <a
-      href="/src/img/gallery/Gonza.jpg"
+      href={Gonza.src}
       data-pswp-width="4604"
       data-pswp-height="3070"
       target="_blank"
     >
-      <Image
-        src="/src/img/gallery/Gonza.jpg"
-        alt={"alt"}
-        width={347}
-        height={231}
-      />
+      <Image src={Gonza} alt={"alt"} width={4604} height={3070} />
     </a>
-    <!-- Ro -->
+    <!-- Ro2 -->
     <a
-      href="/src/img/gallery/Ro2.jpg"
+      href={Ro2.src}
       data-pswp-width="1432"
       data-pswp-height="1797"
       target="_blank"
     >
-      <Image
-        src="/src/img/gallery/Ro2.jpg"
-        alt={"alt"}
-        width={350}
-        height={350}
-      />
+      <Image src={Ro2} alt={"alt"} width={1432} height={1797} />
     </a>
     <!-- Andres -->
     <a
-      href="/src/img/gallery/Andres.jpg"
+      href={Andres.src}
       data-pswp-width="1910"
       data-pswp-height="1272"
       target="_blank"
     >
-      <Image
-        src="/src/img/gallery/Andres.jpg"
-        alt={"alt"}
-        width={350}
-        height={350}
-      />
+      <Image src={Andres} alt={"alt"} width={1910} height={1272} />
     </a>
-    <!-- Diego -->
+    <!-- Diego1 -->
     <a
-      href="/src/img/gallery/Diego1.jpg"
+      href={Diego1.src}
       data-pswp-width="4604"
       data-pswp-height="3070"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/Diego1.jpg"
+        src={Diego1}
         alt={"alt"}
-        width={347}
-        height={231}
+        width={4604}
+        height={3070}
       />
     </a>
-    <!-- Caro & Mavi -->
+    <!-- CaroMavi -->
     <a
-      href="/src/img/gallery/CaroMavi.jpg"
+      href={CaroMavi.src}
       data-pswp-width="5986"
       data-pswp-height="3984"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/CaroMavi.jpg"
+        src={CaroMavi}
         alt={"alt"}
-        width={350}
-        height={350}
+        width={5986}
+        height={3984}
       />
     </a>
     <!-- Ro -->
@@ -98,71 +93,71 @@ import BAND2 from "../../src/img/BAND2.webp";
         height={231}
       />
     </a>
-    <!-- Gonza & Andres -->
+    <!-- GonzaAndres -->
     <a
-      href="/src/img/gallery/GonzaAndres.jpeg"
+      href={GonzaAndres.src}
       data-pswp-width="746"
       data-pswp-height="933"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/GonzaAndres.jpeg"
+        src={GonzaAndres}
         alt={"alt"}
-        width={350}
-        height={350}
+        width={746}
+        height={933}
       />
     </a>
-    <!-- Andres 2 -->
+    <!-- Andres2 -->
     <a
-      href="/src/img/gallery/Andres2.jpg"
+      href={Andres2.src}
       data-pswp-width="651"
       data-pswp-height="897"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/Andres2.JPG"
+        src={Andres2}
         alt={"alt"}
-        width={350}
-        height={350}
+        width={651}
+        height={897}
       />
     </a>
-    <!-- Diego 2 -->
+    <!-- Diego2 -->
     <a
-      href="/src/img/gallery/Diego2.jpg"
+      href={Diego2.src}
       data-pswp-width="722"
       data-pswp-height="899"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/Diego2.jpg"
+        src={Diego2}
         alt={"alt"}
-        width={350}
-        height={350}
+        width={722}
+        height={899}
       />
     </a>
-    <!-- Banda -->
+    <!-- ModoCasona -->
     <a
-      href="/src/img/ModoCasona.webp"
+      href={ModoCasona.src}
       data-pswp-width="4620"
       data-pswp-height="3072"
       target="_blank"
     >
       <Image
-        src="/src/img/ModoCasona.webp"
+        src={ModoCasona}
         alt={"alt"}
-        width={347}
-        height={231}
+        width={4620}
+        height={3072}
       />
     </a>
-    <!-- Banda -->
+    <!-- todos -->
     <a
-      href="/src/img/gallery/todos.jpg"
+      href={todos.src}
       data-pswp-width="636"
       data-pswp-height="957"
       target="_blank"
     >
       <Image
-        src="/src/img/gallery/todos.jpg"
+        src={todos}
         alt={"alt"}
         width={350}
         height={350}
