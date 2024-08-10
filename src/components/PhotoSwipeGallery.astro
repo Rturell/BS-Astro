@@ -1,17 +1,18 @@
 ---
 import { Image } from "astro:assets";
+import BAND2 from "../../src/img/BAND2.webp";
 ---
 
 <div id="gallery">
   <div id="gallery-photoswipe">
     <!-- Banda -->
     <a
-      href="/src/img/BAND2.webp"
+      href="/src/img/media/BAND2.webp"
       data-pswp-width="4060"
       data-pswp-height="2700"
       target="_blank"
     >
-      <Image src="/src/img/BAND2.webp" alt={"alt"} width={350} height={350} />
+      <Image src={BAND2} alt={"alt"} width={350} height={350} />
     </a>
     <!-- Gonza -->
     <a
