@@ -1,0 +1,219 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="gallery-section">
+  <div id="gallery">
+    <!-- Banda -->
+    <a
+      href="/src/img/BAND2.webp"
+      data-pswp-width="4060"
+      data-pswp-height="2700"
+      target="_blank"
+    >
+      <Image src="/src/img/BAND2.webp" alt={"alt"} width={350} height={350} />
+    </a>
+    <!-- Gonza -->
+    <a
+      href="/src/img/gallery/Gonza.jpg"
+      data-pswp-width="4604"
+      data-pswp-height="3070"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/Gonza.jpg"
+        alt={"alt"}
+        width={347}
+        height={231}
+      />
+    </a>
+    <!-- Ro -->
+    <a
+      href="/src/img/gallery/Ro2.jpg"
+      data-pswp-width="1432"
+      data-pswp-height="1797"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/Ro2.jpg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
+    </a>
+    <!-- Andres -->
+    <a
+      href="/src/img/gallery/Andres.jpg"
+      data-pswp-width="1910"
+      data-pswp-height="1272"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/Andres.jpg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
+    </a>
+    <!-- Diego -->
+    <a
+      href="/src/img/gallery/Diego1.jpg"
+      data-pswp-width="4604"
+      data-pswp-height="3070"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/Diego1.jpg"
+        alt={"alt"}
+        width={347}
+        height={231}
+      />
+    </a>
+    <!-- Caro & Mavi -->
+    <a
+      href="/src/img/gallery/CaroMavi.jpg"
+      data-pswp-width="5986"
+      data-pswp-height="3984"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/CaroMavi.jpg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
+    </a>
+    <!-- Ro -->
+    <a
+      href="/src/img/gallery/Ro3.jpg"
+      data-pswp-width="4604"
+      data-pswp-height="3070"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/Ro3.jpg"
+        alt={"alt"}
+        width={347}
+        height={231}
+      />
+    </a>
+    <!-- Gonza & Andres -->
+    <a
+      href="/src/img/gallery/GonzaAndres.jpeg"
+      data-pswp-width="746"
+      data-pswp-height="933"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/gallery/GonzaAndres.jpeg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
+    </a>
+    <!-- Andres 2 -->
+    <a
+      href="/src/img/gallery/Andres2.jpg"
+      data-pswp-width="651"
+      data-pswp-height="897"
+      target="_blank"
+    >
+      <Image src="/src/img/gallery/Andres2.JPG" alt={"alt"} width={350} height={350} />
+    </a>
+    <!-- Diego 2 -->
+    <a
+      href="/src/img/gallery/Diego2.jpg"
+      data-pswp-width="722"
+      data-pswp-height="899"
+      target="_blank"
+    >
+      <Image src="/src/img/gallery/Diego2.jpg" alt={"alt"} width={350} height={350} />
+    </a>
+    <!-- Banda -->
+    <a
+      href="/src/img/ModoCasona.webp"
+      data-pswp-width="4620"
+      data-pswp-height="3072"
+      target="_blank"
+    >
+      <Image
+        src="/src/img/ModoCasona.webp"
+        alt={"alt"}
+        width={347}
+        height={231}
+      />
+    </a>
+    <!-- Banda -->
+    <a
+      href="/src/img/gallery/todos.jpg"
+      data-pswp-width="636"
+      data-pswp-height="957"
+      target="_blank"
+    >
+      <Image src="/src/img/gallery/todos.jpg" alt={"alt"} width={350} height={350} />
+    </a>
+  </div>
+</div>
+
+<style>
+  .gallery-section {
+    background-color: black;
+    border-top: 4px solid var(--color-white);
+    border-bottom: 8px solid var(--color-black);
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #gallery a {
+    flex: 50%;
+    cursor: pointer;
+  }
+
+  @media (min-width: 600px) {
+    #gallery a {
+      flex: 33.3333%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #gallery a {
+      flex: 15%;
+    }
+  }
+
+  #gallery img {
+    height: 218px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (min-width: 768px) {
+    #gallery img {
+      height: 350px;
+    }
+  }
+
+  
+</style>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>
