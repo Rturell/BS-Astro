@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 ---
 
-<div class="gallery-section">
-  <div id="gallery">
+<div id="gallery">
+  <div id="gallery-photoswipe">
     <!-- Banda -->
     <a
       href="/src/img/BAND2.webp"
@@ -118,7 +118,12 @@ import { Image } from "astro:assets";
       data-pswp-height="897"
       target="_blank"
     >
-      <Image src="/src/img/gallery/Andres2.JPG" alt={"alt"} width={350} height={350} />
+      <Image
+        src="/src/img/gallery/Andres2.JPG"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
     </a>
     <!-- Diego 2 -->
     <a
@@ -127,7 +132,12 @@ import { Image } from "astro:assets";
       data-pswp-height="899"
       target="_blank"
     >
-      <Image src="/src/img/gallery/Diego2.jpg" alt={"alt"} width={350} height={350} />
+      <Image
+        src="/src/img/gallery/Diego2.jpg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
     </a>
     <!-- Banda -->
     <a
@@ -150,13 +160,18 @@ import { Image } from "astro:assets";
       data-pswp-height="957"
       target="_blank"
     >
-      <Image src="/src/img/gallery/todos.jpg" alt={"alt"} width={350} height={350} />
+      <Image
+        src="/src/img/gallery/todos.jpg"
+        alt={"alt"}
+        width={350}
+        height={350}
+      />
     </a>
   </div>
 </div>
 
 <style>
-  .gallery-section {
+  #gallery {
     background-color: black;
     border-top: 4px solid var(--color-white);
     border-bottom: 8px solid var(--color-black);
@@ -168,41 +183,39 @@ import { Image } from "astro:assets";
     margin-bottom: 70px;
   }
 
-  #gallery {
+  #gallery-photoswipe {
     display: flex;
     flex-wrap: wrap;
   }
 
-  #gallery a {
+  #gallery-photoswipe a {
     flex: 50%;
     cursor: pointer;
   }
 
   @media (min-width: 600px) {
-    #gallery a {
+    #gallery-photoswipe a {
       flex: 33.3333%;
     }
   }
 
   @media (min-width: 768px) {
-    #gallery a {
+    #gallery-photoswipe a {
       flex: 15%;
     }
   }
 
-  #gallery img {
+  #gallery-photoswipe img {
     height: 218px;
     object-fit: cover;
     object-position: top;
   }
 
   @media (min-width: 768px) {
-    #gallery img {
+    #gallery-photoswipe img {
       height: 350px;
     }
   }
-
-  
 </style>
 
 <script>
@@ -210,7 +223,7 @@ import { Image } from "astro:assets";
   import "photoswipe/style.css";
 
   const lightbox = new PhotoSwipeLightbox({
-    gallery: "#gallery",
+    gallery: "#gallery-photoswipe",
     children: "a",
     pswpModule: () => import("photoswipe"),
   });
