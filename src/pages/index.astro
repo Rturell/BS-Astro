@@ -1,38 +1,45 @@
 ---
-import Shows from '../components/Home/Shows.astro';
-import Layout from '../layouts/Layout.astro';
-import HeroFuego from '../components/Home/HeroFuego.astro'
-import HeroHastaElFinal from '../components/Home/HeroHastaElFinal.astro'
-import Nosotros from '../components/Home/Nosotros.astro'
-import Musica from '../components/Home/Musica.astro'
-import Contacto from '../components/Home/Contacto.astro'
-import News from '../components/Home/News.astro';
-import PhotoSwipeGallery from '../components/PhotoSwipeGallery.astro';
+import Shows from "../components/Home/Shows.astro";
+import Layout from "../layouts/Layout.astro";
+import HeroFuego from "../components/Home/HeroFuego.astro";
+import HeroHastaElFinal from "../components/Home/HeroHastaElFinal.astro";
+import Nosotros from "../components/Home/Nosotros.astro";
+import Musica from "../components/Home/Musica.astro";
+import Contacto from "../components/Home/Contacto.astro";
+import News from "../components/Home/News.astro";
+import PhotoSwipeGallery from "../components/PhotoSwipeGallery.astro";
+
+const res = await fetch("http://astrotheme.local/wp-json/wp/v2/home");
+const data = await res.json();
+const homeData = data[0].acf;
+console.log(homeData);
 ---
 
-<Layout title="Black Smoke">
-	<div class="main">
-		<HeroHastaElFinal/>
-		<!-- <HeroFuego/> -->
-		<Nosotros/>
-		<Musica/>
-		<News/>
-		<Shows/>
-		<PhotoSwipeGallery/>
-		<Contacto/>
-	</div>
+<Layout title={homeData.title}>
+  <div class="main">
+    <HeroHastaElFinal />
+    <!-- <HeroFuego/> -->
+    <Nosotros />
+    <Musica />
+    <News />
+    <Shows />
+    <PhotoSwipeGallery />
+    <Contacto />
+  </div>
 </Layout>
 
-
 <style>
-	.main {
-		margin-top: 95px;
-		background-color: var(--color-black);
-		background:linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%),
-			url('../img/black-texture.webp');
-		background-position: center;
-		background-position: top;
-		background-repeat: repeat-y;
-	}
+  .main {
+    margin-top: 95px;
+    background-color: var(--color-black);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url("../img/black-texture.webp");
+    background-position: center;
+    background-position: top;
+    background-repeat: repeat-y;
+  }
 </style>
-
