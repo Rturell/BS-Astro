@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/NewsLayout.astro'
-date: 15/10/2023
+date: DOMINGO, 15 DE OCTUBRE, 2023
 title: Nos invitas una cervecita?
 img: 'https://i.ibb.co/FgHZwLm/Black-Smoke-Can-Shopify.webp'
 alt: Imagen de una lata de cerveza con el texto "Aguante Black Smoke"

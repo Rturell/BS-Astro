@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/NewsLayout.astro'
 author: Rodrigo Turell
-date: 16/12/2023
+date: Sábado, 16 de Diciembre, 2023
 title: Estamos grabando!
 img: 'https://i.ibb.co/k3XhZmv/PHOTO-2023-10-22-18-45-57.jpg'
 alt: Black Smoke en Mastodonte Etudio

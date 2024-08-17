@@ -1,9 +1,9 @@
 ---
 layout: '../../layouts/NewsLayout.astro'
 author: Rodrigo Turell
-date: 17/05/24
-title: 🇦🇷 Hola Buenos Aires 🇦🇷
-img: 'https://i.ibb.co/pJyT5td/IMG-1479-1.png'
+date: Viernes, 17 de Mayo, 2024
+title: Hola Buenos Aires! 🇦🇷
+img: 'https://i.ibb.co/F03vPbr/Afiche-Melonio-Bar.jpg'
 alt: Afiche del show. 23 de Agosto, Black Smoke en Santa Lucía. 
 description: ¿Por qué tan elegante Homero? Porque nos vamos a Buenos Aires chabón! Antes que nada les comentamos que esta noticia...
 ---

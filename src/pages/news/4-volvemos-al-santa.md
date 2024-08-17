@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/NewsLayout.astro'
 author: Rodrigo Turell
-date: 17/05/24
+date: Jueves, 16 de Mayo, 2024
 title: Volvemos a Santa Lucía 🔥
 img: 'https://i.ibb.co/wCbJt7Y/Screenshot-2024-05-17-at-23-25-34.png'
 alt: Afiche del show. 15 de Junio, Black Smoke en Santa Lucía. 

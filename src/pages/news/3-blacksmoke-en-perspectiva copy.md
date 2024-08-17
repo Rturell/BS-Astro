@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/NewsLayout.astro'
 author: Rodrigo Turell
-date: 20/01/24
+date: Sábado, 20 de Enero, 2024
 title: Black Smoke En Perspectiva.
 img: 'https://i.ibb.co/kJBg4C3/Black-Smoke-En-Perspectiva.png'
 alt: Andres Nion y Rodrigo Turell en los estudios de En Perspectiva
