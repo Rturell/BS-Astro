@@ -13,7 +13,7 @@ const posts = await Astro.glob("../pages/news/*.md");
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {
           posts.reverse().map((post) => (
-            <article>
+            <article class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
               <a href={post.url} class="card rounded-lg shadow-xl">
                 <img class="card-img" src={post.frontmatter.img} alt="" />
 
