@@ -15,7 +15,11 @@ const posts = await Astro.glob("../pages/news/*.md");
           posts.reverse().map((post) => (
             <article class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
               <a href={post.url} class="card rounded-lg shadow-xl">
-                <img class="card-img" src={post.frontmatter.img} alt="" />
+                <img
+                  class="card-img object-cover object-top"
+                  src={post.frontmatter.img}
+                  alt=""
+                />
 
                 <div class="card-body">
                   <div class="card-date text-white uppercase">
@@ -45,7 +49,6 @@ const posts = await Astro.glob("../pages/news/*.md");
   .card-img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }

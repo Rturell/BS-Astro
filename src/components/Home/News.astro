@@ -17,7 +17,11 @@ const posts = await Astro.glob("../../pages/news/*.md");
           .map((post) => (
             <article class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
               <a href={post.url} class="card rounded-lg shadow-xl">
-                <img class="card-img" src={post.frontmatter.img} alt="" />
+                <img
+                  class="card-img object-cover object-top"
+                  src={post.frontmatter.img}
+                  alt=""
+                />
 
                 <div class="card-body">
                   <div class="card-date text-white uppercase">

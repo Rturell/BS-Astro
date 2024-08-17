@@ -8,6 +8,10 @@ alt: Black Smoke en Mastodonte Etudio
 description: Ya comenzamos el proceso de grabación de cuatro nuevos temas que van a formar parte de nuestro tercer trabajo discografico...
 ---
 
+![Flyer: Invitanos una cervecita](https://i.ibb.co/k3XhZmv/PHOTO-2023-10-22-18-45-57.jpg)
+
+<br>
+
 Ya comenzamos el proceso de grabación! Estamos trabajando en cuatro temitas que van a formar parte de nuestro tercer trabajo discografico.
 
 <br />

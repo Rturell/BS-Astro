@@ -7,9 +7,13 @@ alt: Imagen de una lata de cerveza con el texto "Aguante Black Smoke"
 description: Te contamos que estamos a nada de empezar a grabar nuestro tercer disco de estudio y estamos muy emocionados! Para financiarlo...
 ---
 
+![Flyer: Invitanos una cervecita](https://i.ibb.co/FgHZwLm/Black-Smoke-Can-Shopify.webp)
+
+<br>
+
 Hola! Te contamos que estamos a nada de empezar a grabar nuestro tercer disco de estudio y estamos muy emocionados! Para financiarlo pensamos muchas cosas, entre ellas el nuevo y querido crowdfounding. Por eso, si te gusta lo que hacemos y querés que el mejor disco de Hard Rock del año (?) salga cuanto antes, podés invitarnos una cerveza.
 
-</br>
+<br>
 
 Vamos a brindar en tu nombre y vas a ser parte de los **agradecimientos del próximo disco** como un apoyo fundamental para hacerlo realidad. 😉
 
@@ -23,9 +27,11 @@ También vamos a crear un **¨Mejores Amigos”** en instagram con todos los que
 
 </br>
 
-<a href="https://blacksmokeuy.myshopify.com/products/cerveza" class="secondary-btn" target="_blank">
+<a href="https://blacksmokeuy.myshopify.com/products/cerveza" class="secondary-btn mb-8 inline-block" target="_blank">
     Invitar Cerveza!
 </a>
+
+
 
 <style>
     .secondary-btn {
