@@ -5,7 +5,7 @@ date: VIERNES, 16 DE AGOSTO, 2024
 title: Nuevo Show en Montevideo!!!
 img: 'https://i.ibb.co/72SnT97/Black-Smoke-News.png'
 alt: Afiche del show. 6 de Setiembre, Black Smoke en Mandrágora. 
-description: Está vez dentro del Cíclo "El Grito de la Mandrágora", que se está llevando a cabo en la Casa Cultural Mandrágora....
+description: Está vez dentro del Cíclo "El Grito de la Mandrágora", que se está llevando a cabo en la Casa Cultural Mandrágora...
 ---
 
 Hola amigos y amigas! Queremos contarles que hay un nuevo show en Montevideo confirmado. 
