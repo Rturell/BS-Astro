@@ -1,31 +1,85 @@
+---
+import InstagramIcon from "svelte-icons/fa/FaInstagram.svelte";
+import TwitterIcon from "svelte-icons/fa/FaTwitter.svelte";
+import FacebookIcon from "svelte-icons/fa/FaFacebookSquare.svelte";
+import SpotifyIcon from "svelte-icons/fa/FaSpotify.svelte";
+import YoutubeIcon from "svelte-icons/fa/FaYoutube.svelte";
+---
+
 <div id="contacto">
-    <div class="container">
-        <h2 class="text-4xl mb-4">Contacto</h2>
-        <p>No tengas miedo en escribirnos para lo que sea.</p>
-        <p>
-            Podés hacerlo a <a href="mailto:blacksmokeuy@gmail.com"><b>blacksmokeuy@gmail.com</b></a>, y en unas horitas te
-            vamos a estar respondiendo. 🤘
-        </p>
+  <div class="container">
+    <h2 class="text-4xl mb-4">Contacto</h2>
+    <p>No tengas miedo en escribirnos para lo que sea.</p>
+    <p>
+      Podés hacerlo a <a href="mailto:blacksmokeuy@gmail.com"
+        ><b>blacksmokeuy@gmail.com</b></a
+      >, y en unas horitas te vamos a estar respondiendo. 🤘
+    </p>
+
+    <div class="social-icons mt-6">
+      <a
+        class="icons me-3"
+        href="https://open.spotify.com/artist/0zasdvklx3VEacoHL4fjnQ"
+        target="_blank"
+      >
+        <SpotifyIcon />
+      </a>
+      <a
+        class="icons me-3"
+        href="https://www.youtube.com/blacksmokeuy"
+        target="_blank"
+      >
+        <YoutubeIcon />
+      </a>
+      <a
+        class="icons me-3"
+        href="https://www.instagram.com/blacksmokeuy"
+        target="_blank"
+      >
+        <InstagramIcon />
+      </a>
+      <a
+        class="icons me-3"
+        href="https://twitter.com/blacksmokeuy"
+        target="_blank"
+      >
+        <TwitterIcon />
+      </a>
+      <a
+        class="icons me-3"
+        href="https://www.facebook.com/blacksmokeuy"
+        target="_blank"
+      >
+        <FacebookIcon />
+      </a>
     </div>
+  </div>
 </div>
 
 <style>
-    #contacto {
-        position: relative;
-        background-color: var(--color-white);
-        background-image: url(../../lib/images/vibora.jpg);
-        background-repeat: no-repeat;
-        background-position: top;
-    }
+  #contacto {
+    position: relative;
+    background-color: var(--color-white);
+    background-image: url(../../lib/images/vibora.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+  }
 
-    h2 {
-        color: var(--color-black);
-        margin-bottom: 30px;
-    }
+  h2 {
+    color: var(--color-black);
+    margin-bottom: 30px;
+  }
 
-    p {
-        margin: 0;
-        color: var(--color-black);
-        text-wrap: pretty;
-    }
+  p {
+    margin: 0;
+    color: var(--color-black);
+    text-wrap: pretty;
+  }
+
+  .icons {
+    display: inline-block;
+    color: var(--color-black);
+    width: 24px;
+    height: 24px;
+  }
 </style>
