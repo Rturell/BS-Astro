@@ -1,90 +1,85 @@
 ---
 import { Image } from "astro:assets";
-import artWork from "../../src/img/Ojo.webp";
+import artWork from "../../src/img/bs-FUEGO.png";
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
-        <div class="disc-header flex flex-wrap justify-between items-center">
-            <h2 class="font-bold">Black Smoke</h2>
-            <div class="flex gap-4">
-                <a
-                    target="_blank"
-                    class="primary-btn"
-                    href="https://blacksmokeuy.myshopify.com/products/black-smoke-disco-digital"
-                    >Comprar Disco Digital
-                </a>
-                <a
-                    class="primary-btn"
-                    href="https://blacksmoke.fanlink.to/black-smoke"
-                    target="_blank">Stream Album</a
-                >
-            </div>
-        </div>
-        <hr />
-        <p class="text-album mb-3">
-            <a
-                href="https://music.youtube.com/watch?v=6oGudjDsoGs&list=RDAMVM6oGudjDsoGs"
-                target="blank">01. Fuego <span class="text-sm">(Turell / Nion)</span></a
-            >
-            <a
-                href="https://music.youtube.com/watch?v=FX20JR-ENDc&feature=share"
-                target="blank">02. Blues <span class="text-sm">(Turell)</span></a
-            >
-            <a
-                href="https://music.youtube.com/watch?v=zBe20_jATow&feature=share"
-                target="blank">03. Deja Vu <span class="text-sm">(Turell / Nion)</span></a
-            >
-            <a
-                href="https://music.youtube.com/watch?v=f3T3Zfgu_7A&feature=share"
-                target="blank">04. Power 3 <span class="text-sm">(Turell)</span></a
-            >
-        </p>
-        <div class="credits text-sm">
-            <p>(2024) Todas las letras escritas por Rodrigo Turell Alayón.</p>
-            <p>
-                Tema 1 y 3 compuesto por Rodrigo Turell Alayón y Andrés
-                Nion Valanzano.
-            </p>
-            <p>Tema 2 y 4 compuestos por Rodrigo Turell Alayón.</p>
-            <p>Gonzalo Núñez: Voz <br> Andres Nion: Guitarra y Coros <br> Rodrigo Turell: Bajo y Coros <br> Diego Spinelli: Batería</p>
-            <p>Arte de tapa y diseño gráfico Rodrigo Turell Alayón.</p>
-        </div>
+  <div>
+    <div class="disc-header flex flex-wrap justify-between items-center">
+      <h2 class="font-bold mb-4 mr-5 text-4xl">FUEGO</h2>
+      <div class="flex gap-4">
+        <!-- <a
+          target="_blank"
+          class="primary-btn"
+          href="https://blacksmokeuy.myshopify.com/products/black-smoke-disco-digital"
+          >Comprar Disco Digital
+        </a> -->
+        <a
+          class="primary-btn"
+          href="https://blacksmoke.fanlink.to/black-smoke"
+          target="_blank">Stream EP</a
+        >
+      </div>
     </div>
-    <div>
-        <Image src={artWork} alt="Arte de tapa del primer disco de Black Smoke" />
+    <hr class="my-8" />
+    <p class="text-album mb-3">
+      <a href="" target="blank">01. Fuego</a>
+      <a href="" target="blank" class="disable">02. Deja Vú</a>
+      <a href="" target="blank" class="disable">03. Vuelvo a Creer</a>
+      <a href="" target="blank" class="disable">04. Nada es Igual </a>
+    </p>
+    <div class="credits text-sm mt-6">
+      <p>(2025) Todas las letras escritas por Rodrigo Turell Alayón.</p>
+      <p>
+        Tema 1 y 2 compuesto por Rodrigo Turell Alayón y Andrés Nion Valanzano.
+      </p>
+      <p>Tema 3 y 4 compuestos por Rodrigo Turell Alayón.</p>
+      <p>
+        Grabado en: Mastodonte, El Cuarto Tavella y White Smoke Studios.
+      </p>
+      <p>Mezcla y Mastering: Nicolas Demczylo</p>
+      <p>Arte de tapa y diseño gráfico: Rodrigo Turell Alayón.</p>
     </div>
+  </div>
+  <div>
+    <Image src={artWork} alt="Arte de tapa del primer disco de Black Smoke" />
+  </div>
 </div>
 
 <style>
-    img {
-        width: 100%;
-        height: auto;
-        max-width: 600px;
-        border: 15px solid white;
-        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border: 15px solid white;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
 
-    .text-album {
-        display: flex;
-        flex-direction: column;
-    }
+  .text-album {
+    display: flex;
+    flex-direction: column;
+  }
 
-    a {
-        display: inline;
-        width: fit-content;
-        margin-bottom: 5px;
-        color: var(--color-text);
-    }
+  a {
+    display: inline;
+    width: fit-content;
+    margin-bottom: 5px;
+    color: var(--color-text);
+  }
 
-    a:hover {
-        color: var(--color-red);
-        text-decoration: none;
-    }
+  a:hover {
+    color: var(--color-red);
+    text-decoration: none;
+  }
 
-    .credits {
-        & p {
-            margin: 0 !important;
-        }
+  .credits {
+    & p {
+      margin: 0 !important;
     }
+  }
+
+  .disable {
+    color: rgb(183, 183, 183);
+    pointer-events: none;
+  }
 </style>
