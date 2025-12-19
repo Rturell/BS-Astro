@@ -1,0 +1,319 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
+---
+
+<Layout title="Smokers Lounge">
+  <section class="smokers-page">
+    <!-- ========================= -->
+    <!-- NO LOGUEADO -->
+    <!-- ========================= -->
+    <SignedOut>
+      <div class="restricted-wrapper">
+        <div class="restricted-card">
+          <h1 class="restricted-title">BLACK SMOKE FAMILY</h1>
+
+          <p class="restricted-subtitle">
+            Este espacio es para quienes apoyaron a Black Smoke con una
+            cervecita. Nada más y nada menos que eso: un gesto simple que nos
+            ayuda a seguir grabando, tocando y haciendo música.
+          </p>
+
+          <ul class="restricted-perks">
+            <li>🎥 Videos exclusivos (backstage, ensayos, inéditos)</li>
+            <li>
+              🎧 Audios, adelantos, demos y material que no sale en plataformas
+            </li>
+            <li>🎟 Accesos anticipados a entradas y anuncios</li>
+            <li>👕 Merch exclusiva para quienes apoyan</li>
+            <li>🤘 Beneficios y sorpresas</li>
+          </ul>
+
+          <p class="restricted-note">
+            No es una suscripción.<br />
+            Si alguna vez nos invitaste una cervecita, este espacio es tuyo. <br
+            /> <br>
+            * Esta funcionalidad esta en Beta. Pronto te va a llegar una invitación.🤘
+          </p>
+
+          <div class="restricted-actions">
+            <SignInButton mode="redirect" class="btn-primary">
+              Iniciar sesión
+            </SignInButton>
+
+            <a
+              href="https://blacksmokeuy.myshopify.com/products/cerveza"
+              target="_blank"
+              class="btn-secondary"
+            >
+              Invitar una cervecita 🍺
+            </a>
+          </div>
+        </div>
+      </div>
+    </SignedOut>
+
+    <!-- ========================= -->
+    <!-- LOGUEADO -->
+    <!-- ========================= -->
+    <SignedIn>
+      <div class="members-wrapper">
+        <div class="members-container">
+          <!-- INTRO -->
+          <header class="members-header">
+            <h1 class="members-title">Black Smoke Family</h1>
+            <p class="members-intro">
+              Gracias por bancar a Black Smoke con una cervecita 🍺 De verdad.
+              Ese gesto, por chico que parezca, es lo que nos permite seguir
+              grabando, tocando y creciendo como banda independiente. Todo lo
+              que ves acá es para ustedes 🤘🔥
+            </p>
+          </header>
+
+          <!-- SECCIONES -->
+          <section class="members-sections">
+            <div class="member-card">
+              <h3>🎥 Videos exclusivos</h3>
+              <p>
+                Backstage, ensayos, versiones inéditas y momentos que no
+                publicamos en ningún otro lado.
+              </p>
+              <a href="/family/videos" class="member-card-btn"> Ver videos </a>
+            </div>
+
+            <div class="member-card">
+              <h3>🎧 Audios & demos</h3>
+              <p>
+                Maquetas, demos, pruebas, ideas y canciones que quedaron fuera
+                de los discos.
+              </p>
+              <a href="/family/audios" class="member-card-btn">
+                Escuchar audios
+              </a>
+            </div>
+
+            <div class="member-card">
+              <h3>👕 Merch exclusiva</h3>
+              <p>
+                Productos especiales pensados para quienes apoyan a la banda.
+                Tiradas chicas y cosas distintas.
+              </p>
+              <a
+                href="https://blacksmokeuy.myshopify.com/"
+                target="_blank"
+                class="member-card-btn"
+              >
+                Ver merch
+              </a>
+            </div>
+
+            <div class="member-card coming-soon">
+              <h3>💬 Comunidad</h3>
+              <p>
+                Un espacio para charlar, compartir y estar un poco más cerca de
+                la banda.
+              </p>
+              <span class="member-card-soon"> Próximamente </span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </SignedIn>
+  </section>
+</Layout>
+
+<style>
+  /* ===================== */
+  /* PAGE BASE */
+  /* ===================== */
+
+  .smokers-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #101010, #000);
+    padding: 40px 16px 40px;
+    color: #fff;
+  }
+
+  /* ===================== */
+  /* RESTRICTED */
+  /* ===================== */
+
+  .restricted-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .restricted-card {
+    max-width: 700px;
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+
+  .restricted-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .restricted-title span {
+    display: block;
+    color: #e11d48;
+    margin-top: 8px;
+  }
+
+  .restricted-subtitle {
+    font-size: 1rem;
+    color: #cfcfcf;
+    margin-bottom: 24px;
+  }
+
+  .restricted-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 24px;
+    max-width: 460px;
+    text-align: left;
+  }
+
+  .restricted-perks li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .restricted-note {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 28px;
+  }
+
+  /* ===================== */
+  /* BUTTONS */
+  /* ===================== */
+
+  .restricted-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    background: #e11d48;
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 700;
+  }
+
+  .btn-primary:hover {
+    background: #be123c;
+  }
+
+  .btn-secondary {
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .btn-secondary:hover {
+    background: #1f1f1f;
+  }
+
+  /* ===================== */
+  /* MEMBERS */
+  /* ===================== */
+
+  .members-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .members-container {
+    max-width: 1100px;
+    width: 100%;
+  }
+
+  .members-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .members-title {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+
+  .members-intro {
+    color: #cfcfcf;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===================== */
+  /* CARDS */
+  /* ===================== */
+
+  .members-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .member-card {
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 28px 24px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .member-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .member-card p {
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .member-card-btn {
+    background: #e11d48;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    align-self: flex-start;
+  }
+
+  .member-card-btn:hover {
+    background: #be123c;
+  }
+
+  .member-card.coming-soon {
+    opacity: 0.75;
+  }
+
+  .member-card-soon {
+    margin-top: auto;
+    font-weight: 700;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+</style>
