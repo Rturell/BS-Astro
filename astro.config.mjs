@@ -7,9 +7,13 @@ import clerk from '@clerk/astro'
 import {
   esUY
 } from '@clerk/localizations'
+import node from '@astrojs/node'
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
+  adapter: node({
+     mode: 'standalone'
+  }),
   integrations: [
     tailwind(),
     svelte(),
