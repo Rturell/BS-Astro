@@ -1,58 +1,97 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 ---
 
 <Layout title="Videos exclusivos">
   <section class="videos-page">
     <div class="videos-wrapper">
       <div class="videos-container">
-        <!-- HEADER -->
-        <header class="videos-header">
-          <h1 class="videos-title">Videos</h1>
-          <p class="videos-intro">
-            Backstage, ensayos, versiones inéditas y material que no publicamos
-            en ningún otro lado.
-          </p>
-        </header>
 
-        <!-- GRID DE VIDEOS -->
-        <section class="videos-grid">
-          <!-- CARD -->
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Ensayo – tema nuevo"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <h3>Ensayo – tema nuevo</h3>
-            <p>Primer ensayo del tema nuevo, versión cruda sin editar.</p>
-          </div>
+        <SignedOut>
+          <div class="restricted-wrapper">
+            <div class="restricted-card">
+              <h1 class="restricted-title">
+                CONTENIDO EXCLUSIVO
+                <span>BLACK SMOKE FAMILY</span>
+              </h1>
 
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe
-                src="https://www.youtube.com/embed/3tmd-ClpJxA"
-                title="Backstage – show en Montevideo"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-            <h3>Backstage – show en Montevideo</h3>
-            <p>Momentos previos al show, pruebas de sonido y camarín.</p>
-          </div>
+              <p class="restricted-subtitle">
+                Estos videos son solo para quienes apoyaron a Black Smoke con
+                una cervecita 🍺
+              </p>
 
-          <div class="video-card coming-soon">
-            <div class="video-embed placeholder">
-              <span>⏳</span>
+              <ul class="restricted-perks">
+                <li>🎥 Backstage y ensayos</li>
+                <li>🔥 Material inédito</li>
+                <li>🎧 Audios y demos</li>
+                <li>👕 Merch exclusiva</li>
+              </ul>
+
+              <div class="restricted-actions">
+                <SignInButton mode="redirect" class="btn-primary">
+                  Iniciar sesión
+                </SignInButton>
+
+                <a
+                  href="https://blacksmokeuy.myshopify.com/products/cerveza"
+                  target="_blank"
+                  class="btn-secondary"
+                >
+                  Bancar con una cervecita
+                </a>
+              </div>
             </div>
-            <h3>Documental corto</h3>
-            <p>Material inédito del proceso de grabación.</p>
-            <span class="video-soon"> Próximamente </span>
           </div>
-        </section>
+        </SignedOut>
+
+
+        <SignedIn>
+          <!-- HEADER -->
+          <header class="videos-header">
+            <h1 class="videos-title">Videos</h1>
+            <p class="videos-intro">
+              Backstage, ensayos, versiones inéditas y material que no
+              publicamos en ningún otro lado.
+            </p>
+          </header>
+
+          <!-- GRID DE VIDEOS -->
+          <section class="videos-grid">
+            <div class="video-card">
+              <div class="video-embed">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Ensayo – tema nuevo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <h3>Ensayo – tema nuevo</h3>
+              <p>Primer ensayo del tema nuevo, versión cruda sin editar.</p>
+            </div>
+
+            <div class="video-card">
+              <div class="video-embed">
+                <iframe
+                  src="https://www.youtube.com/embed/3tmd-ClpJxA"
+                  title="Backstage – show en Montevideo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <h3>Backstage – show en Montevideo</h3>
+              <p>Momentos previos al show, pruebas de sonido y camarín.</p>
+            </div>
+
+            <div class="video-card coming-soon">
+              <div class="video-embed placeholder">
+                <span>⏳</span>
+              </div>
+              <h3>Documental corto</h3>
+              <p>Material inédito del proceso de grabación.</p>
+              <span class="video-soon">Próximamente</span>
+            </div>
+          </section>
+        </SignedIn>
       </div>
     </div>
   </section>
@@ -70,10 +109,6 @@ import Layout from "../../layouts/Layout.astro";
     color: #fff;
   }
 
-  /* ===================== */
-  /* LAYOUT */
-  /* ===================== */
-
   .videos-wrapper {
     display: flex;
     justify-content: center;
@@ -82,6 +117,73 @@ import Layout from "../../layouts/Layout.astro";
   .videos-container {
     max-width: 1100px;
     width: 100%;
+  }
+
+  /* ===================== */
+  /* RESTRICTED */
+  /* ===================== */
+
+  .restricted-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .restricted-card {
+    max-width: 640px;
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .restricted-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .restricted-title span {
+    display: block;
+    color: #e11d48;
+    margin-top: 8px;
+  }
+
+  .restricted-subtitle {
+    color: #cfcfcf;
+    margin-bottom: 24px;
+  }
+
+  .restricted-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 32px;
+    max-width: 420px;
+    text-align: left;
+  }
+
+  .restricted-perks li {
+    padding: 6px 0;
+  }
+
+  .restricted-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    background: #e11d48;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .btn-secondary {
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 10px;
   }
 
   /* ===================== */
@@ -142,7 +244,6 @@ import Layout from "../../layouts/Layout.astro";
     inset: 0;
     width: 100%;
     height: 100%;
-    border: none;
   }
 
   .video-embed.placeholder {
@@ -151,20 +252,6 @@ import Layout from "../../layouts/Layout.astro";
     justify-content: center;
     font-size: 3rem;
     background: linear-gradient(135deg, #111, #222);
-  }
-
-  /* ===================== */
-  /* TEXT */
-  /* ===================== */
-
-  .video-card h3 {
-    margin-bottom: 8px;
-  }
-
-  .video-card p {
-    color: #cfcfcf;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
   }
 
   .video-card.coming-soon {
