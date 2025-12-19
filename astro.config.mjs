@@ -3,6 +3,7 @@ import {
 } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import svelte from '@astrojs/svelte'
+import node from '@astrojs/node'
 import clerk from '@clerk/astro'
 import {
   esUY
@@ -10,7 +11,6 @@ import {
 
 
 export default defineConfig({
-  output: 'static',
   integrations: [
     tailwind(),
     svelte(),
@@ -18,4 +18,8 @@ export default defineConfig({
       localization: esUY,
     }),
   ],
+  adapter: node({
+      mode: 'standalone'
+    }),
+    output: 'server',
 })
