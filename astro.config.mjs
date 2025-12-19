@@ -7,13 +7,12 @@ import clerk from '@clerk/astro'
 import {
   esUY
 } from '@clerk/localizations'
-import node from '@astrojs/node'
+import netlify from '@astrojs/netlify'
+
 
 export default defineConfig({
   output: 'server',
-  adapter: node({
-     mode: 'standalone'
-  }),
+  adapter: netlify(),
   integrations: [
     tailwind(),
     svelte(),
