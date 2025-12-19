@@ -4,6 +4,9 @@ import {
 import tailwind from '@astrojs/tailwind'
 import svelte from '@astrojs/svelte'
 import clerk from '@clerk/astro'
+import {
+  esUY
+} from '@clerk/localizations'
 
 export default defineConfig({
   output: 'static',
@@ -11,7 +14,7 @@ export default defineConfig({
     tailwind(),
     svelte(),
     clerk({
-      localization: 'es-ES',
+      localization: esUY,
     }),
   ],
 })
