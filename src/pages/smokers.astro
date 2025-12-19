@@ -5,9 +5,7 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 
 <Layout title="Smokers Lounge">
   <section class="smokers-page">
-    <!-- ========================= -->
-    <!-- NO LOGUEADO -->
-    <!-- ========================= -->
+
     <SignedOut>
       <div class="restricted-wrapper">
         <div class="restricted-card">
@@ -53,9 +51,6 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
       </div>
     </SignedOut>
 
-    <!-- ========================= -->
-    <!-- LOGUEADO -->
-    <!-- ========================= -->
     <SignedIn>
       <div class="members-wrapper">
         <div class="members-container">
@@ -123,9 +118,6 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 </Layout>
 
 <style>
-  /* ===================== */
-  /* PAGE BASE */
-  /* ===================== */
 
   .smokers-page {
     min-height: 100vh;
