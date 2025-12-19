@@ -1,25 +1,23 @@
 import {
   defineConfig
 } from 'astro/config'
+import vercel from '@astrojs/vercel'
+import react from '@astrojs/react'
 import tailwind from '@astrojs/tailwind'
-import svelte from '@astrojs/svelte'
-import node from '@astrojs/node'
 import clerk from '@clerk/astro'
 import {
   esUY
 } from '@clerk/localizations'
 
-
 export default defineConfig({
+  output: 'server',
+  adapter: vercel(),
   integrations: [
+    react(),
     tailwind(),
-    svelte(),
     clerk({
       localization: esUY,
     }),
   ],
-  adapter: node({
-      mode: 'standalone'
-    }),
-    output: 'server',
 })
+
