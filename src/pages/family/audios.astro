@@ -1,0 +1,184 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Audios exclusivos">
+  <section class="audios-page">
+    <div class="audios-wrapper">
+      <div class="audios-container">
+        <!-- HEADER -->
+        <header class="audios-header">
+          <h1 class="audios-title">Audios</h1>
+          <p class="audios-intro">
+            Demos, versiones inéditas, tomas crudas y material que no va a salir
+            publicado en ningún otro lado.
+          </p>
+        </header>
+
+        <!-- GRID DE AUDIOS -->
+        <section class="audios-grid">
+          <div class="audio-card">
+            <h3>Nada Es Igual – Inédito (2026)</h3>
+            <p>
+              Este es el último tema que grabamos y que aún no salió. No está en
+              ningún lado, solo acá. Así que lo podés escuchar antes que nadie!.
+            </p>
+
+            <audio
+              controls
+              preload="none"
+              controlslist="nodownload noplaybackrate"
+            >
+              <source src="/audios/NadaEsIgual.mp3" type="audio/mpeg" />
+              Tu navegador no soporta audio HTML5.
+            </audio>
+          </div>
+
+          <div class="audio-card">
+            <h3>Cuando Todo Cae – Ensayo (2018)</h3>
+            <p>
+              Ensayo del 2018, empezábamos a probar como interactuar con la gente. Hoy ya es un
+              clásico!
+            </p>
+
+            <audio
+              controls
+              preload="none"
+              controlslist="nodownload noplaybackrate"
+            >
+              <source
+                src="/audios/CuandoTodoCaeEnsayo2018.mp3"
+                type="audio/mpeg"
+              />
+              Tu navegador no soporta audio HTML5.
+            </audio>
+          </div>
+
+          <div class="audio-card">
+            <h3>Medley – Ensayo (2018)</h3>
+            <p>
+              En algunos shows en vivos hacíamos un medley de nuestros riffs favoritos. Esto fue una grabación para chequear si
+              sonaba coherente. Pasó la prueba!
+            </p>
+
+            <audio
+              controls
+              preload="none"
+              controlslist="nodownload noplaybackrate"
+            >
+              <source src="/audios/MedleyEnsayo2018.mp3" type="audio/mpeg" />
+              Tu navegador no soporta audio HTML5.
+            </audio>
+          </div>
+
+          <div class="audio-card coming-soon">
+            <p>Se vienen más cositas. Esto recién empieza</p>
+
+            <div class="audio-placeholder">
+              <span>⏳</span>
+              <!-- <span class="audio-soon">Próximamente</span> -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ===================== */
+  /* BASE */
+  /* ===================== */
+
+  .audios-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    padding: 120px 16px 40px;
+    color: #fff;
+  }
+
+  .audios-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .audios-container {
+    max-width: 1100px;
+    width: 100%;
+  }
+
+  /* ===================== */
+  /* HEADER */
+  /* ===================== */
+
+  .audios-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .audios-title {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+
+  .audios-intro {
+    color: #cfcfcf;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* ===================== */
+  /* GRID */
+  /* ===================== */
+
+  .audios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .audio-card {
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .audio-card p {
+    color: #cfcfcf;
+  }
+
+  /* ===================== */
+  /* AUDIO */
+  /* ===================== */
+
+  audio {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .audio-placeholder {
+    margin-top: auto;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    color: #aaa;
+    background: #111;
+    border-radius: 10px;
+  }
+
+  .audio-card.coming-soon {
+    opacity: 0.6;
+  }
+
+  .audio-soon {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+</style>

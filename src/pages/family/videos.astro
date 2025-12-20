@@ -1,97 +1,55 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 ---
 
 <Layout title="Videos exclusivos">
   <section class="videos-page">
     <div class="videos-wrapper">
       <div class="videos-container">
+        <!-- HEADER -->
+        <header class="videos-header">
+          <h1 class="videos-title">Videos</h1>
+          <p class="videos-intro">
+            Backstage, ensayos, pruebas de sonido versiones inéditas, reels que
+            no ven la luz. En definitiva, material que no publicaríamos en
+            ningún lado.
+          </p>
+        </header>
 
-        <SignedOut>
-          <div class="restricted-wrapper">
-            <div class="restricted-card">
-              <h1 class="restricted-title">
-                CONTENIDO EXCLUSIVO
-                <span>BLACK SMOKE FAMILY</span>
-              </h1>
-
-              <p class="restricted-subtitle">
-                Estos videos son solo para quienes apoyaron a Black Smoke con
-                una cervecita 🍺
-              </p>
-
-              <ul class="restricted-perks">
-                <li>🎥 Backstage y ensayos</li>
-                <li>🔥 Material inédito</li>
-                <li>🎧 Audios y demos</li>
-                <li>👕 Merch exclusiva</li>
-              </ul>
-
-              <div class="restricted-actions">
-                <SignInButton mode="redirect" class="btn-primary">
-                  Iniciar sesión
-                </SignInButton>
-
-                <a
-                  href="https://blacksmokeuy.myshopify.com/products/cerveza"
-                  target="_blank"
-                  class="btn-secondary"
-                >
-                  Bancar con una cervecita
-                </a>
-              </div>
+        <!-- GRID DE VIDEOS -->
+        <section class="videos-grid">
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/mW1dkSplhws?si=ZoYBoUAAlUhyjUWx"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
             </div>
-          </div>
-        </SignedOut>
-
-
-        <SignedIn>
-          <!-- HEADER -->
-          <header class="videos-header">
-            <h1 class="videos-title">Videos</h1>
-            <p class="videos-intro">
-              Backstage, ensayos, versiones inéditas y material que no
-              publicamos en ningún otro lado.
+            <h3>Prueba de Sonido, Live Era, 2024</h3>
+            <p>
+              Así probábamos sonido en Live Era. Perdonen nuestras caras de
+              concentrados. Si esta etapa sale mal, todo en un show sale mal.
             </p>
-          </header>
+          </div>
 
-          <!-- GRID DE VIDEOS -->
-          <section class="videos-grid">
-            <div class="video-card">
-              <div class="video-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Ensayo – tema nuevo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <h3>Ensayo – tema nuevo</h3>
-              <p>Primer ensayo del tema nuevo, versión cruda sin editar.</p>
+          <div class="video-card coming-soon">
+            <div class="video-embed placeholder">
+              <span>⏳</span>
             </div>
-
-            <div class="video-card">
-              <div class="video-embed">
-                <iframe
-                  src="https://www.youtube.com/embed/3tmd-ClpJxA"
-                  title="Backstage – show en Montevideo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <h3>Backstage – show en Montevideo</h3>
-              <p>Momentos previos al show, pruebas de sonido y camarín.</p>
-            </div>
-
-            <div class="video-card coming-soon">
-              <div class="video-embed placeholder">
-                <span>⏳</span>
-              </div>
-              <h3>Documental corto</h3>
-              <p>Material inédito del proceso de grabación.</p>
-              <span class="video-soon">Próximamente</span>
-            </div>
-          </section>
-        </SignedIn>
+            <p>
+              Acá va a aparecer un videito de Gonza, Rodri y Andres cantando
+              Renacer, cuando Youtube entienda que no estamos infringiendo
+              ningún derecho de autor y nos desbloquee el video porque
+              básicamente el tema es nuestro. 💅
+            </p>
+            <span class="video-soon">Próximamente</span>
+          </div>
+        </section>
       </div>
     </div>
   </section>
