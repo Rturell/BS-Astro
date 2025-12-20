@@ -1,37 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/astro/components";
 ---
 
 <Layout title="Smokers Lounge">
   <section class="smokers-page">
-
     <SignedOut>
       <div class="restricted-wrapper">
         <div class="restricted-card">
           <h1 class="restricted-title">BLACK SMOKE FAMILY</h1>
 
           <p class="restricted-subtitle">
-            Este espacio es para quienes apoyaron a Black Smoke con una
+            Este espacio es exclusivo para quienes nos apoyaron comprando una
             cervecita. Nada más y nada menos que eso: un gesto simple que nos
-            ayuda a seguir grabando, tocando y haciendo música.
+            ayuda a seguir grabando, tocando y haciendo música. En esta sección
+            vas a encontrar:
           </p>
 
           <ul class="restricted-perks">
-            <li>🎥 Videos exclusivos (backstage, ensayos, inéditos)</li>
+            <li>🎥 Videos exclusivos (backstage, ensayos, temas inéditos)</li>
             <li>
-              🎧 Audios, adelantos, demos y material que no sale en plataformas
+              🎧 Audios, adelantos, demos y material que no publicamos en
+              plataformas
             </li>
             <li>🎟 Accesos anticipados a entradas y anuncios</li>
-            <li>👕 Merch exclusiva para quienes apoyan</li>
+            <li>👕 Merch exclusiva para la Black Smoke Family</li>
             <li>🤘 Beneficios y sorpresas</li>
           </ul>
 
           <p class="restricted-note">
             No es una suscripción.<br />
             Si alguna vez nos invitaste una cervecita, este espacio es tuyo. <br
-            /> <br>
-            * Esta funcionalidad esta en Beta. Pronto te va a llegar una invitación.🤘
+            />
+            <br />
+            * Esta funcionalidad esta en Beta. Pronto te va a llegar una invitación
+            para que te puedas crear tu usuario.🤘
           </p>
 
           <div class="restricted-actions">
@@ -57,18 +65,21 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
           <!-- INTRO -->
           <header class="members-header">
             <h1 class="members-title">Black Smoke Family</h1>
-            <p class="members-intro">
-              Gracias por bancar a Black Smoke con una cervecita 🍺 De verdad.
-              Ese gesto, por chico que parezca, es lo que nos permite seguir
-              grabando, tocando y creciendo como banda independiente. Todo lo
-              que ves acá es para ustedes 🤘🔥
+            Hola! Gracias por ser parte de la Black Smoke Family!
+            <p>
+              Ese tipo de gestos es lo que nos permite seguir grabando, tocando
+              y creciendo como banda independiente.
+            </p>
+            <p>
+              Todo lo que ves acá es para vos y con los días esto va a ir
+              creciendo cada vez más. 🤘🔥
             </p>
           </header>
 
           <!-- SECCIONES -->
           <section class="members-sections">
             <div class="member-card">
-              <h3>🎥 Videos exclusivos</h3>
+              <h3>🎥 Videos</h3>
               <p>
                 Backstage, ensayos, versiones inéditas y momentos que no
                 publicamos en ningún otro lado.
@@ -78,38 +89,30 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 
             <div class="member-card">
               <h3>🎧 Audios & demos</h3>
-              <p>
-                Maquetas, demos, pruebas, ideas y canciones que quedaron fuera
-                de los discos.
-              </p>
+              <p>Maquetas, demos, ensayos, pruebas, temas inéditos y más!</p>
               <a href="/family/audios" class="member-card-btn">
                 Escuchar audios
               </a>
             </div>
 
-            <div class="member-card">
+            <div class="member-card coming-soon">
               <h3>👕 Merch exclusiva</h3>
               <p>
-                Productos especiales pensados para quienes apoyan a la banda.
-                Tiradas chicas y cosas distintas.
+                Productos especiales pensados para quienes siempre están ahí
+                apoyando.
               </p>
-              <a
-                href="https://blacksmokeuy.myshopify.com/"
-                target="_blank"
-                class="member-card-btn"
-              >
-                Ver merch
-              </a>
+              <p>Próximamente</p>
+              <button class="member-card-btn" disabled> Ver merch </button>
             </div>
 
-            <div class="member-card coming-soon">
+            <!-- <div class="member-card coming-soon">
               <h3>💬 Comunidad</h3>
               <p>
                 Un espacio para charlar, compartir y estar un poco más cerca de
                 la banda.
               </p>
               <span class="member-card-soon"> Próximamente </span>
-            </div>
+            </div> -->
           </section>
         </div>
       </div>
@@ -118,11 +121,10 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 </Layout>
 
 <style>
-
   .smokers-page {
     min-height: 100vh;
     background: radial-gradient(circle at top, #101010, #000);
-    padding: 40px 16px 40px;
+    padding: 70px 16px 40px;
     color: #fff;
   }
 
@@ -307,5 +309,9 @@ import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
     font-weight: 700;
     color: #aaa;
     font-size: 0.9rem;
+  }
+
+  .cl-userButtonOuterIdentifier {
+    pointer-events: none;
   }
 </style>
