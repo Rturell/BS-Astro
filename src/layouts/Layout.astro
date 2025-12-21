@@ -1,180 +1,187 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Sitio Web de la banda de Rock and Roll, Black Smoke" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header/>
-		<slot />
-		<Footer/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Sitio Web de la banda de Rock and Roll, Black Smoke"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-	--font-body: 'Libre Franklin',
-	sans-serif;
-	--font-title: 'Playfair Display SC',
-		serif;
+  :root {
+    --font-body: "Libre Franklin", sans-serif;
+    --font-title: "Playfair Display SC", serif;
 
-	--color-black: black;
-	--color-black-light: rgb(48, 48, 48);
-	--color-red: #912F2F;
-	--color-yellow: #fac43d;
-	--color-white: white;
-	--color-text: rgb(48, 48, 48);
-	--color-link: #b92323;
-	font-family: var(--font-body);
-	color: var(--color-text);
-}
+    --color-black: black;
+    --color-black-light: rgb(48, 48, 48);
+    --color-red: #912f2f;
+    --color-yellow: #fac43d;
+    --color-white: white;
+    --color-text: rgb(48, 48, 48);
+    --color-link: #b92323;
+    font-family: var(--font-body);
+    color: var(--color-text);
+  }
 
-html {
-	scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 500px;
+  }
 
-body {
-	position: relative;
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-size: 100vw 100vh;
-}
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 130px;
+    }
+  }
 
-.container {
-	width: 90% !important;
-	max-width: 1450px !important;
-	margin: auto;
-	color: var(--color-text);
-	padding: 12rem 0 8rem 0;
-}
+  body {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+  }
 
-::-webkit-scrollbar {
-	display: none;
-}
+  .container {
+    width: 90% !important;
+    max-width: 1450px !important;
+    margin: auto;
+    color: var(--color-text);
+    padding: 8rem 0 8rem 0;
+  }
 
-h1,
-h2 {
-	font-family: var(--font-title);
-	text-transform: uppercase;
-	font-weight: 500;
-	letter-spacing: 2px;
-	line-height: 2rem;
-}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-p {
-	line-height: 1.5;
-}
+  h1,
+  h2 {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 2rem;
+  }
 
-a {
-	text-decoration: none !important;
-}
+  p {
+    line-height: 1.5;
+  }
 
-a:hover {
-	text-decoration: underline;
-}
+  a {
+    text-decoration: none !important;
+  }
 
-li {
-	list-style: none;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-img {
-	max-width: 100%;
-	height: auto;
-}
+  li {
+    list-style: none;
+  }
 
-hr {
-	margin-bottom: 20px;
-}
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
+  hr {
+    margin-bottom: 20px;
+  }
 
-button:focus:not(:focus-visible) {
-	outline: none;
-}
+  input,
+  button {
+    font-size: inherit;
+    font-family: inherit;
+  }
 
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
-}
+  button:focus:not(:focus-visible) {
+    outline: none;
+  }
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-}
+  @media (min-width: 720px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 
-.primary-btn {
-	padding: 10px 10px;
-	background-color: var(--color-black);
-	color: var(--color-white) !important;
-	height: fit-content;
-	border: 1px solid var(--color-black);
-	border-radius: 0;
-	text-decoration: none;
-}
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+  }
 
-.primary-btn:active,
-.primary-btn:focus-visible,
-.primary-btn:focus {
-	background-color: var(--color-black);
-	color: var(--color-white) !important;
-	height: fit-content;
-	border: 1px solid var(--color-black);
-	border-radius: 0;
-	box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
-}
-.primary-btn:hover {
-	background-color: var(--color-white);
-	color: var(--color-black) !important;
-	border: 1px solid var(--color-black);
-}
+  .primary-btn {
+    padding: 10px 10px;
+    background-color: var(--color-black);
+    color: var(--color-white) !important;
+    height: fit-content;
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    text-decoration: none;
+  }
 
+  .primary-btn:active,
+  .primary-btn:focus-visible,
+  .primary-btn:focus {
+    background-color: var(--color-black);
+    color: var(--color-white) !important;
+    height: fit-content;
+    border: 1px solid var(--color-black);
+    border-radius: 0;
+    box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
+  }
+  .primary-btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-black) !important;
+    border: 1px solid var(--color-black);
+  }
 
-.secondary-btn {
-	padding: 10px 10px;
-	background-color: var(--color-white);
-	color: var(--color-black);
-	height: fit-content;
-	border: 1px solid var(--color-white);
-	text-decoration: none;
-}
+  .secondary-btn {
+    padding: 10px 10px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    height: fit-content;
+    border: 1px solid var(--color-white);
+    text-decoration: none;
+  }
 
-.secondary-btn:active,
-.secondary-btn:focus-visible,
-.secondary-btn:focus,
-.secondary-btn:hover {
-	background-color: var(--color-black);
-	color: var(--color-white) !important;
-	height: fit-content;
-	border: 1px solid var(--color-white);
-	border-radius: 0;
-	box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
-}
+  .secondary-btn:active,
+  .secondary-btn:focus-visible,
+  .secondary-btn:focus,
+  .secondary-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white) !important;
+    height: fit-content;
+    border: 1px solid var(--color-white);
+    border-radius: 0;
+    box-shadow: 0 0 0 0.25rem rgba(1, 1, 1, 0.25);
+  }
 </style>
