@@ -1,12 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/astro/components";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/astro/components";
 ---
+
+<script>
+  import { $userStore } from "@clerk/astro/client";
+
+  $userStore.subscribe((user) => {
+    if (!user) return;
+    const name = user.firstName || user.username || " ";
+    const el = document.getElementById("user-name");
+    if (el) el.textContent = name;
+  });
+</script>
 
 <Layout title="Smokers Lounge">
   <section class="smokers-page">
@@ -69,7 +75,9 @@ import {
           <!-- INTRO -->
           <header class="members-header">
             <h1 class="members-title">FUEGO</h1>
-            <p>Gracias por ser parte de nuestra comunidad!</p>
+            <p>
+              Hola <span id="user-name"></span>! Gracias por ser parte de nuestra comunidad.
+            </p>
             <p>
               Ese tipo de gestos son los que nos permiten seguir grabando,
               tocando y creciendo como banda independiente.
@@ -319,3 +327,7 @@ import {
     pointer-events: none;
   }
 </style>
+
+<script type="module" is:inline>
+  console.log("Global client JS running");
+</script>
