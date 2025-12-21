@@ -29,7 +29,7 @@ Es un proceso largo, tenganos paciencia. Morimos por sacar estos temas a la luz 
 
 <br />
 
-Queremos agradecer especialmente a la <span>[Black Smoke Family](/apoyos)</span> que nos dió tremendo impulso para comenzar este proceso. 
+Queremos agradecer especialmente a la <span>[FUEGO](/apoyos)</span> que nos dió tremendo impulso para comenzar este proceso. 
 
 <br />
 
