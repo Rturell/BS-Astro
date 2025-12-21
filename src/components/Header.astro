@@ -113,6 +113,7 @@ import {
   <!-- Mobile drawer -->
   <div
     x-show="open"
+    x-cloak
     x-transition
     @click.outside="open = false"
     class="lg:hidden bg-black border-t border-neutral-700"
@@ -141,5 +142,9 @@ import {
   .nav-link {
     @apply uppercase px-4 py-2 text-sm font-semibold rounded-lg
            hover:bg-gray-200 hover:text-gray-900 transition;
+  }
+
+  [x-cloak] {
+    display: none !important;
   }
 </style>
