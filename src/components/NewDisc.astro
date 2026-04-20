@@ -1,39 +1,36 @@
 ---
 import { Image } from "astro:assets";
-import artWork from "../../src/img/bs-VUELVO.jpg";
+import artWork from "../../src/img/bs-NADA.jpg"; // actualizar artwork
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
   <div>
     <div class="disc-header flex flex-wrap justify-between items-center">
-      <h2 class="font-bold mb-4 mr-5 text-4xl">VUELVO A CREER</h2>
+      <h2 class="font-bold mb-4 mr-5 text-4xl">NADA ES IGUAL</h2>
       <div class="flex gap-4">
-        <!-- <a
-          target="_blank"
-          class="primary-btn"
-          href="https://blacksmokeuy.myshopify.com/products/black-smoke-disco-digital"
-          >Comprar Disco Digital
-        </a> -->
         <a
           class="primary-btn"
-          href="https://open.spotify.com/album/4bQVcqEwChYuBTeaxjhxVL"
-          target="_blank">Stream EP</a
+          href="https://blacksmoke.fanlink.tv/nada-es-igual"
+          target="_blank">Escuchar EP</a
         >
       </div>
     </div>
     <hr class="my-8" />
     <p class="text-album mb-3">
-      <a href="https://blacksmoke.fanlink.tv/fuego" target="blank">01. Fuego</a>
-      <a href="https://blacksmoke.fanlink.tv/deja-vu" target="blank"
+      <a href="https://blacksmoke.fanlink.tv/fuego" target="_blank">01. Fuego</a
+      >
+      <a href="https://blacksmoke.fanlink.tv/deja-vu" target="_blank"
         >02. Deja Vu</a
       >
-      <a href="https://blacksmoke.fanlink.tv/vuelvo-a-creer" target="blank"
+      <a href="https://blacksmoke.fanlink.tv/vuelvo-a-creer" target="_blank"
         >03. Vuelvo a Creer</a
       >
-      <a href="" target="blank" class="disable">04. Nada es Igual </a>
+      <a href="https://blacksmoke.fanlink.tv/nada-es-igual" target="_blank"
+        >04. Nada es Igual</a
+      >
     </p>
     <div class="credits text-sm mt-6">
-      <p>(2025) Todas las letras escritas por Rodrigo Turell Alayón.</p>
+      <p>(2026) Todas las letras escritas por Rodrigo Turell Alayón.</p>
       <p>
         Tema 1 y 2 compuesto por Rodrigo Turell Alayón y Andrés Nion Valanzano.
       </p>
@@ -44,7 +41,7 @@ import artWork from "../../src/img/bs-VUELVO.jpg";
     </div>
   </div>
   <div class="-order-1 md:order-1">
-    <Image src={artWork} alt="Arte de tapa del primer disco de Black Smoke" />
+    <Image src={artWork} alt="Arte de tapa de Nada Es Igual - Black Smoke" />
   </div>
 </div>
 
@@ -78,10 +75,5 @@ import artWork from "../../src/img/bs-VUELVO.jpg";
     & p {
       margin: 0 !important;
     }
-  }
-
-  .disable {
-    color: rgb(183, 183, 183);
-    pointer-events: none;
   }
 </style>
