@@ -1,92 +1,66 @@
 ---
-import Footer from "../components/Footer.astro";
+import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Noticias Black Smoke" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title}</title>
-    </head>
-
-</html>
-<body>
+<Layout
+  title={`${frontmatter.title} | Black Smoke`}
+  description={frontmatter.description}
+>
+  <section class="news-post">
     <div class="container p-10 mt-10 m-auto">
-        <div class="mb-[70px]">
-            <a class="text-white back-btn" href="/allnews">Volver a Noticias</a>
-        </div>
-        <div class="text-white text-sm pb-2">{frontmatter.date}</div>
-        <h1 class="text-5xl mb-8">{frontmatter.title}</h1>
-        <div class="content">
-            <slot />
-        </div>
+      <div class="mb-[70px]">
+        <a class="back-btn" href="/allnews">Volver a Noticias</a>
+      </div>
+      <div class="post-date pb-2">{frontmatter.date}</div>
+      <h1 class="text-5xl mb-8">{frontmatter.title}</h1>
+      <div class="content">
+        <slot />
+      </div>
     </div>
-    <Footer />
-</body>
+  </section>
+</Layout>
 
 <style>
-    :root {
-        --font-body: "Libre Franklin", sans-serif;
-        --font-title: "Playfair Display SC", serif;
-        --font-mono: "Fira Mono", monospace;
+  .news-post {
+    background-color: rgb(14, 14, 14);
+  }
 
-        --color-black: black;
-        --color-black-light: rgb(48, 48, 48);
-        --color-red: #912f2f;
-        --color-yellow: #fac43d;
-        --color-white: white;
-        --color-text: rgb(48, 48, 48);
-        --color-link: #b92323;
-        font-family: var(--font-body);
-        color: var(--color-text);
-    }
+  .container {
+    width: 90% !important;
+    max-width: 800px !important;
+    margin: auto;
+    padding: 4rem 0 4rem 0;
+  }
 
-    body {
-        background-color: rgb(14, 14, 14);
-    }
+  .post-date {
+    color: white;
+    font-size: 0.875rem;
+  }
 
-    header {
-        position: relative !important;
-    }
+  h1 {
+    color: white;
+  }
 
-    .container {
-        width: 90% !important;
-        max-width: 800px !important;
-        margin: auto;
-        color: var(--color-text);
-        padding: 4rem 0 4rem 0;
-    }
+  .content {
+    color: white;
+    font-size: 18px;
+  }
 
-    h1 {
-        color: white;
-    }
+  .content p {
+    color: white;
+    margin-bottom: 50px;
+  }
 
-    .content {
-        color: white;
-        font-size: 18px;
-    }
+  .back-btn {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+  }
 
-    p {
-        color: white;
-        margin-bottom: 50px;
-    }
-
-    .back-btn {
-        border: 1px solid white;
-        padding: 10px;
-        margin-bottom: 50px;
-    }
-
-    .back-btn:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid white;
-        padding: 10px;
-        margin-bottom: 50px;
-    }
+  .back-btn:hover {
+    background-color: white;
+    color: black;
+  }
 </style>
