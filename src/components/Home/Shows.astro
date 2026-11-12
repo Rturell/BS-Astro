@@ -1,25 +1,57 @@
 <section id="shows">
     <div class="container">
         <h2 class="text-center text-white text-4xl mb-20">PRÓXIMOS SHOWS</h2>
-        <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"
-        ></script>
-        <a
-            class="bit-widget-initializer"
-            data-artist-name="id_1809032"
-            data-font="Helvetica"
-            data-language="es"
-            data-display-details="false"
-            data-text-color="rgba(255,255,255,1)"
-            data-background-color="rgba(16,15,17,1)"
-            data-separator-color="rgba(255,255,255,1)"
-            data-popup-background-color="rgba(255,255,255,1)"
-            data-link-color="rgba(116,157,228,1)"
-            data-link-text-color="rgba(5,0,0,1)"
-            data-display-past-dates="true"
-        >
-        </a>
+        <div id="shows-widget-container"></div>
+        <template id="shows-widget-template">
+            <a
+                class="bit-widget-initializer"
+                data-artist-name="id_1809032"
+                data-font="Helvetica"
+                data-language="es"
+                data-display-details="false"
+                data-text-color="rgba(255,255,255,1)"
+                data-background-color="rgba(16,15,17,1)"
+                data-separator-color="rgba(255,255,255,1)"
+                data-popup-background-color="rgba(255,255,255,1)"
+                data-link-color="rgba(116,157,228,1)"
+                data-link-text-color="rgba(5,0,0,1)"
+                data-display-past-dates="true"
+            ></a>
+        </template>
     </div>
 </section>
+
+<script is:inline>
+    (function () {
+        function resetShowsWidget() {
+            const container = document.getElementById("shows-widget-container");
+            const template = document.getElementById("shows-widget-template");
+            if (!container || !template) return;
+
+            // Bandsintown's script sets up its own MutationObserver
+            // (window.BIT.widgetInitializer) that watches for new
+            // .bit-widget-initializer elements and transforms them — it
+            // only needs to load once. Astro's view transitions revert
+            // this element back to its pristine <a> on repeat visits (the
+            // page's own HTML is always the untransformed version), so we
+            // just need to put a fresh one back; the observer handles the
+            // rest. Re-loading the whole script instead double-boots its
+            // widget bundle and visibly breaks its rendering.
+            container.innerHTML = "";
+            container.appendChild(template.content.cloneNode(true));
+
+            if (!document.getElementById("bandsintown-widget-script")) {
+                const script = document.createElement("script");
+                script.id = "bandsintown-widget-script";
+                script.charset = "utf-8";
+                script.src = "https://widget.bandsintown.com/main.min.js";
+                document.body.appendChild(script);
+            }
+        }
+
+        document.addEventListener("astro:page-load", resetShowsWidget);
+    })();
+</script>
 
 <style>
     #shows {
