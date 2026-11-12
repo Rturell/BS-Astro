@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: DOMINGO, 13 DE OCTUBRE, 2024
 title: Rata Blanca en Uruguay! 🔥
 img: 'https://i.ibb.co/B25T6sf/Rata-Blanca-Black-Smoke-Post.jpg'
-alt:  
+alt: Flyer del show de Rata Blanca con Black Smoke en Uruguay
 description: Tenemos un notición para contarte! Vuelve Rata Blanca a Uruguay y para nosotros es un placer, un honor, un privilegio, una alegría inmensa, un orgullo y una...
 ---
 

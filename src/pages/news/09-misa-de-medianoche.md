@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Martes, 26 de Noviembre, 2024
 title: Misa de Medianoche!
 img: 'https://i.ibb.co/mRKNgQT/Post-Instagram.png'
-alt:  
+alt: Flyer del show Misa de Medianoche de Black Smoke
 description: Cerramos el 2024 y festejamos 10 años de vida con grandes bandas amigas. Pensaban que nos nos íbamos a ver más este año?...
 ---
 

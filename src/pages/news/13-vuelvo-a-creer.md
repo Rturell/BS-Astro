@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Lunes, 24 de Noviembre, 2025
 title: 🎶 Vuelvo a Creer – Nuevo Single!
 img: 'https://i.ibb.co/RkhsLG4k/bs-VUELVO.jpg'
-alt:  
+alt: Arte de tapa del single Vuelvo a Creer de Black Smoke
 description: Hoy lanzamos Vuelvo a Creer! Un nuevo tema que abre otra puerta dentro del universo de la banda. Esta canción explora...
 ---
 
