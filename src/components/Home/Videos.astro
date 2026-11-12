@@ -1,0 +1,166 @@
+---
+const videos = [
+  { id: "zkmRK2iwmUU", title: "Nada Es Igual" },
+  { id: "ulrqFU7fPzY", title: "Vuelvo a Creer (Lyric Video)" },
+  { id: "eljw9s3qIig", title: "Deja Vu (Lyric Video)" },
+  { id: "WyzgoJO-d4c", title: "Fuego (Lyric Video)" },
+];
+---
+
+<div id="videos">
+  <div class="container">
+    <div class="videos-header">
+      <h2 class="text-4xl mb-4">Videos</h2>
+      <a
+        href="https://www.youtube.com/@BlackSmokeUy"
+        target="_blank"
+        class="secondary-btn"
+      >
+        Ver canal de YouTube
+      </a>
+    </div>
+
+    <div class="videos-grid">
+      {
+        videos.map((video) => (
+          <div class="video-card">
+            <button
+              class="video-facade"
+              data-video-id={video.id}
+              aria-label={`Reproducir ${video.title}`}
+            >
+              <img
+                src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                alt={video.title}
+                loading="lazy"
+              />
+              <span class="play-icon">▶</span>
+            </button>
+            <h3>{video.title}</h3>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".video-facade").forEach((facade) => {
+    facade.addEventListener("click", () => {
+      const videoId = facade.dataset.videoId;
+      const iframe = document.createElement("iframe");
+      iframe.className = "video-embed-frame";
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1`;
+      iframe.title = facade.getAttribute("aria-label") || "YouTube video";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  });
+</script>
+
+<style>
+  #videos {
+    background-color: #0b0b0b;
+    background-image:
+      radial-gradient(
+        800px circle at 90% -10%,
+        rgba(225, 29, 72, 0.18),
+        transparent 40%
+      ),
+      radial-gradient(
+        600px circle at 10% 110%,
+        rgba(255, 120, 0, 0.14),
+        transparent 45%
+      );
+    padding: 6rem 0;
+  }
+
+  .videos-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .videos-header h2 {
+    color: #fff;
+    margin: 0;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .videos-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: none;
+    }
+  }
+
+  .video-card h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 12px;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .video-facade {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: #000;
+  }
+
+  .video-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+
+  .video-facade:hover img {
+    opacity: 0.75;
+  }
+
+  .play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e11d48, #ff7a18);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.5);
+  }
+
+  :global(.video-embed-frame) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    border: none;
+  }
+</style>
