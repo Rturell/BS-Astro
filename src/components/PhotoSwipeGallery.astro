@@ -251,6 +251,12 @@ import todos from "../../src/img/gallery/todos.jpg";
   import PhotoSwipeLightbox from "photoswipe/lightbox";
   import "photoswipe/style.css";
 
+  const win = window as typeof window & { __photoswipeLightbox?: PhotoSwipeLightbox };
+
+  if (win.__photoswipeLightbox) {
+    win.__photoswipeLightbox.destroy();
+  }
+
   const lightbox = new PhotoSwipeLightbox({
     gallery: "#gallery-photoswipe",
     children: "a",
@@ -258,4 +264,5 @@ import todos from "../../src/img/gallery/todos.jpg";
   });
 
   lightbox.init();
+  win.__photoswipeLightbox = lightbox;
 </script>
