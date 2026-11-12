@@ -15,15 +15,30 @@ const { stickers } = Astro.props;
   window.__STICKERS__ = stickers;
 </script>
 
-<script
-  is:inline
-  src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
-></script>
-
 <script is:inline>
+  function loadLeaflet() {
+    return new Promise((resolve) => {
+      if (window.L) return resolve();
+      const existing = document.getElementById("leaflet-script");
+      if (existing) {
+        existing.addEventListener("load", resolve);
+        return;
+      }
+      const tag = document.createElement("script");
+      tag.id = "leaflet-script";
+      tag.src = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js";
+      tag.addEventListener("load", resolve);
+      document.head.appendChild(tag);
+    });
+  }
+
   function initMap() {
     const L = window.L;
     const stickers = window.__STICKERS__ || [];
+
+    if (window.__stickerMap) {
+      window.__stickerMap.remove();
+    }
 
     const map = L.map("sticker-map", {
       center: [20, 0],
@@ -62,10 +77,15 @@ const { stickers } = Astro.props;
         .addTo(map)
         .bindPopup(popupHtml);
     });
+
+    window.__stickerMap = map;
   }
 
   function initLightbox() {
-    const overlay = document.createElement("div");
+    let overlay = document.querySelector(".sticker-lightbox");
+    if (overlay) return;
+
+    overlay = document.createElement("div");
     overlay.className = "sticker-lightbox";
     overlay.innerHTML = '<img class="sticker-lightbox-img" alt="" />';
     document.body.appendChild(overlay);
@@ -89,8 +109,18 @@ const { stickers } = Astro.props;
     });
   }
 
-  initMap();
-  initLightbox();
+  // Astro's view transitions reuse (morph) unchanged DOM/script nodes
+  // across soft navigations instead of re-running this module script, so
+  // relying on top-level execution alone misses repeat visits to this
+  // page. astro:page-load fires on every navigation, including the first.
+  document.addEventListener("astro:page-load", () => {
+    const mapEl = document.getElementById("sticker-map");
+    if (!mapEl) return;
+    loadLeaflet().then(() => {
+      initMap();
+      initLightbox();
+    });
+  });
 </script>
 
 <style>

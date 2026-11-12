@@ -25,15 +25,15 @@ description: El pasado 17 de Julio estuvimos en "Así las cosas" programa de TV 
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-	.row p {
+	.content .row p {
 		margin-bottom: 10px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);
     }
 

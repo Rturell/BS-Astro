@@ -1,0 +1,204 @@
+---
+import { tracks } from "../data/tracks";
+---
+
+<div id="mini-player" class="mini-player" transition:persist>
+  <button
+    id="mini-player-toggle"
+    class="mini-player-toggle"
+    aria-label="Mostrar reproductor"
+  >
+    🎵
+  </button>
+
+  <div class="mini-player-panel">
+    <div class="mini-player-info">
+      <p id="mini-player-title" class="mini-player-title">Black Smoke</p>
+      <div class="mini-player-controls">
+        <button id="mini-player-prev" aria-label="Tema anterior">⏮</button>
+        <button id="mini-player-play" aria-label="Reproducir">▶</button>
+        <button id="mini-player-next" aria-label="Tema siguiente">⏭</button>
+      </div>
+      <div class="mini-player-volume">
+        <span aria-hidden="true">🔉</span>
+        <input
+          id="mini-player-volume-slider"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          aria-label="Volumen"
+        />
+      </div>
+    </div>
+    <audio id="mini-player-audio" transition:persist preload="none"></audio>
+  </div>
+</div>
+
+<script define:vars={{ tracks }}>
+  window.__TRACKS__ = tracks;
+</script>
+
+<script is:inline>
+  (function () {
+    if (window.__miniPlayerBound) return;
+    window.__miniPlayerBound = true;
+
+    const tracks = window.__TRACKS__ || [];
+    let currentIndex = 0;
+
+    const audio = document.getElementById("mini-player-audio");
+    const titleEl = document.getElementById("mini-player-title");
+    const playBtn = document.getElementById("mini-player-play");
+    const prevBtn = document.getElementById("mini-player-prev");
+    const nextBtn = document.getElementById("mini-player-next");
+    const toggleBtn = document.getElementById("mini-player-toggle");
+    const panel = document.querySelector(".mini-player-panel");
+    const volumeSlider = document.getElementById("mini-player-volume-slider");
+
+    function loadTrack(index, autoplay) {
+      currentIndex = index;
+      const track = tracks[currentIndex];
+      if (!track) return;
+      audio.src = track.file;
+      titleEl.textContent = track.title;
+      if (autoplay) audio.play();
+    }
+
+    function playPause() {
+      if (!audio.src) loadTrack(currentIndex, false);
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+
+    function nextTrack() {
+      loadTrack((currentIndex + 1) % tracks.length, true);
+    }
+
+    function prevTrack() {
+      loadTrack((currentIndex - 1 + tracks.length) % tracks.length, true);
+    }
+
+    audio.addEventListener("play", () => (playBtn.textContent = "⏸"));
+    audio.addEventListener("pause", () => (playBtn.textContent = "▶"));
+    audio.addEventListener("ended", nextTrack);
+
+    playBtn.addEventListener("click", playPause);
+    nextBtn.addEventListener("click", nextTrack);
+    prevBtn.addEventListener("click", prevTrack);
+    toggleBtn.addEventListener("click", () => {
+      panel.classList.toggle("is-open");
+    });
+    volumeSlider.addEventListener("input", () => {
+      audio.volume = parseFloat(volumeSlider.value);
+    });
+
+    if (tracks.length > 0) {
+      titleEl.textContent = tracks[0].title;
+    }
+  })();
+</script>
+
+<style>
+  .mini-player {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+  }
+
+  .mini-player-toggle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 999px 0 0 999px;
+    background: #ffffff;
+    color: #111;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: -6px 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .mini-player-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+    background: linear-gradient(180deg, #141414, #0a0a0a);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition:
+      max-width 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .mini-player-panel.is-open {
+    max-width: 220px;
+    padding: 10px 14px;
+  }
+
+  .mini-player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    white-space: nowrap;
+  }
+
+  .mini-player-title {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .mini-player-controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .mini-player-controls button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+
+  .mini-player-controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .mini-player-volume {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+  }
+
+  .mini-player-volume input[type="range"] {
+    flex: 1;
+    accent-color: #ff7a18;
+    cursor: pointer;
+  }
+
+  @media (max-width: 640px) {
+    .mini-player {
+      top: auto;
+      bottom: 90px;
+      transform: none;
+    }
+  }
+</style>

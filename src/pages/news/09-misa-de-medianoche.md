@@ -41,11 +41,11 @@ description: Cerramos el 2024 y festejamos 10 años de vida con grandes bandas a
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);
     }
 

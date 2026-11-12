@@ -28,11 +28,11 @@ description: Estamos muy felices de comentarte que ya salió el primer single de
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);
     }
 

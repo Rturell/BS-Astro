@@ -100,49 +100,49 @@ y algo en mi no es igual
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-	.row.credits p {
+	.content .row.credits p {
 		margin-bottom: 0;
 	}
 
-	.row p {
+	.content .row p {
 		margin-bottom: 10px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);	
     }
 
-	img {
+	.content img {
      	margin-bottom: 20px;
 	}
 
-	h3 {
+	.content h3 {
 		font-size: 1.2rem;
 		font-weight: bold;
 		margin-bottom: 5px;
 	}
 
-	.lyrics {
+	.content .lyrics {
 		white-space: pre-line;
 		line-height: 1.6;
     }
 
-	.lyric-container h3 {
+	.content .lyric-container h3 {
 		font-weight: bold;
 		margin-bottom: 5px;
     }
 
-	.lyric-container .author {
+	.content .lyric-container .author {
 		margin-bottom: 20px;
 		font-size: 0.9rem;
 		opacity: 0.7;
 	}
 
-	hr {
+	.content hr {
 	 margin: 40px 0; 
     }
 

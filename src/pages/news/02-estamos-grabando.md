@@ -37,7 +37,7 @@ Muchas gracias y estén atentos a las novedades a tarvés de nuestro sitio.
 
 
 <style>
-    span {
+    .content span {
         color: var(--color-link);
     }
 </style>
