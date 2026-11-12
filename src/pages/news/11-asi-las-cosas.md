@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Lunes, 08 de Setiembre, 2025
 title: Black Smoke en Así las Cosas!
 img: 'https://i.ibb.co/5XpNjXWh/Screenshot-2025-08-03-at-5-04-05-PM.png'
-alt:  
+alt: Captura de pantalla de Black Smoke en el programa Así las Cosas
 description: El pasado 17 de Julio estuvimos en "Así las cosas" programa de TV Ciudad hablando un poco de lo que iba a ser nuestro show junto a Onfaier...
 ---
 

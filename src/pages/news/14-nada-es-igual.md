@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Domingo, 20 de Abril, 2026
 title: 🎶 Nada Es Igual – Nuevo Single!
 img: 'https://i.ibb.co/TDPckwBG/bs-NADA.jpg'
-alt:  
+alt: Arte de tapa del single Nada Es Igual de Black Smoke
 description: Hoy lanzamos Nada Es Igual! Un nuevo tema que marca el cierre de esta etapa. Ya estamos trabajando en nuevas canciones con la mirada puesta en...
 ---
 

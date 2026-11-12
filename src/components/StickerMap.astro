@@ -1,0 +1,190 @@
+---
+import "leaflet/dist/leaflet.css";
+import type { Sticker } from "../data/stickers";
+
+interface Props {
+  stickers: Sticker[];
+}
+
+const { stickers } = Astro.props;
+---
+
+<div id="sticker-map" class="sticker-map"></div>
+
+<script define:vars={{ stickers }}>
+  window.__STICKERS__ = stickers;
+</script>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script is:inline>
+  function initMap() {
+    const L = window.L;
+    const stickers = window.__STICKERS__ || [];
+
+    const map = L.map("sticker-map", {
+      center: [20, 0],
+      zoom: 2,
+      minZoom: 2,
+      worldCopyJump: true,
+    });
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+      maxZoom: 19,
+    }).addTo(map);
+
+    const brandIcon = L.divIcon({
+      className: "sticker-pin",
+      html: '<span class="sticker-pin-dot"></span>',
+      iconSize: [22, 22],
+      popupAnchor: [0, -12],
+    });
+
+    stickers.forEach((sticker) => {
+      const popupHtml = `
+        <div class="sticker-popup">
+          <img
+            src="${sticker.image}"
+            alt="Pegotín en ${sticker.city}"
+            class="sticker-popup-img"
+            data-lightbox-src="${sticker.image}"
+          />
+          <p class="sticker-popup-city">${sticker.city}</p>
+          <p class="sticker-popup-name">De ${sticker.uploaderName}</p>
+        </div>
+      `;
+
+      L.marker([sticker.lat, sticker.lng], { icon: brandIcon })
+        .addTo(map)
+        .bindPopup(popupHtml);
+    });
+  }
+
+  function initLightbox() {
+    const overlay = document.createElement("div");
+    overlay.className = "sticker-lightbox";
+    overlay.innerHTML = '<img class="sticker-lightbox-img" alt="" />';
+    document.body.appendChild(overlay);
+    const img = overlay.querySelector(".sticker-lightbox-img");
+
+    function close() {
+      overlay.classList.remove("is-open");
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target.closest("[data-lightbox-src]");
+      if (target) {
+        img.src = target.getAttribute("data-lightbox-src");
+        overlay.classList.add("is-open");
+      }
+    });
+
+    overlay.addEventListener("click", close);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+  }
+
+  initMap();
+  initLightbox();
+</script>
+
+<style>
+  .sticker-map {
+    width: 100%;
+    height: 60vh;
+    min-height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .sticker-map {
+      height: 50vh;
+      min-height: 340px;
+    }
+  }
+</style>
+
+<style is:global>
+  .sticker-pin-dot {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e11d48, #ff7a18);
+    box-shadow:
+      0 0 0 3px rgba(0, 0, 0, 0.6),
+      0 4px 14px rgba(225, 29, 72, 0.6);
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: linear-gradient(180deg, #141414, #0a0a0a);
+    color: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .leaflet-popup-tip {
+    background: #141414;
+  }
+
+  .leaflet-popup-content {
+    margin: 14px;
+  }
+
+  .leaflet-popup-close-button {
+    color: #fff !important;
+  }
+
+  .sticker-popup-img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    cursor: zoom-in;
+    transition: opacity 0.15s ease;
+  }
+
+  .sticker-popup-img:hover {
+    opacity: 0.85;
+  }
+
+  .sticker-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+  }
+
+  .sticker-lightbox.is-open {
+    display: flex;
+  }
+
+  .sticker-lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  }
+
+  .sticker-popup-city {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .sticker-popup-name {
+    margin: 2px 0 0;
+    color: #ff7a18;
+    font-size: 0.85rem;
+  }
+</style>

@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: DOMINGO, 18 DE AGOSTO, 2024
 title: Prensa Argentina
 img: 'https://i.ibb.co/0t2kczy/Screenshot-2024-08-17-at-6-25-41-PM.png'
-alt:  
+alt: Captura de pantalla de una nota de prensa argentina sobre Black Smoke
 description: Antes de pisar suelo Argentino ya nos sentíamos como en casa! Están son algunas de las notas que nos hicieron medios de BsAs...
 ---
 

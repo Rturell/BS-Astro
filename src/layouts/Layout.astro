@@ -1,26 +1,77 @@
 ---
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-
+import { getImage } from "astro:assets";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ogSource from "../img/Black_Smoke_2025_1.jpg";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: ImageMetadata;
+}
+
+const {
+  title,
+  description = "Sitio Web de la banda de Rock and Roll, Black Smoke",
+  image = ogSource,
+} = Astro.props;
+
+const ogImage = await getImage({ src: image, width: 1200, height: 630 });
+const ogImageURL = new URL(ogImage.src, Astro.url.origin).toString();
+const canonicalURL = new URL(Astro.url.pathname, Astro.url.origin).toString();
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  name: "Black Smoke",
+  genre: "Rock",
+  url: "https://blacksmoke.com.uy",
+  image: ogImageURL,
+  description:
+    "Black Smoke es una banda de Rock de Montevideo, Uruguay, formada en 2014.",
+  foundingDate: "2014",
+  foundingLocation: {
+    "@type": "Place",
+    name: "Montevideo, Uruguay",
+  },
+  sameAs: [
+    "https://www.instagram.com/blacksmokeuy",
+    "https://www.facebook.com/blacksmokeuy",
+    "https://twitter.com/blacksmokeuy",
+    "https://open.spotify.com/artist/0zasdvklx3VEacoHL4fjnQ",
+    "https://www.youtube.com/blacksmokeuy",
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Sitio Web de la banda de Rock and Roll, Black Smoke"
-    />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="es_UY" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </head>
   <body>
     <Header />

@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Lunes, 19 de Mayo, 2025
 title: Fuego es nuestro nuevo tema! 🔥
 img: 'https://i.ibb.co/JFbXw7Jn/BLACK-SMOKE-FUEGO.png'
-alt:  
+alt: Arte de tapa del single Fuego de Black Smoke
 description: Estamos muy felices de comentarte que ya salió el primer single de nuestro tercer disco y ya está disponible para ser escuchado ...
 ---
 

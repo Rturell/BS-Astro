@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 const posts = await Astro.glob("../pages/news/*.md");
 ---
 
@@ -15,10 +16,13 @@ const posts = await Astro.glob("../pages/news/*.md");
           posts.reverse().map((post) => (
             <article class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none">
               <a href={post.url} class="card rounded-lg shadow-xl">
-                <img
+                <Image
                   class="card-img object-cover object-top"
                   src={post.frontmatter.img}
-                  alt=""
+                  width={500}
+                  height={250}
+                  loading="lazy"
+                  alt={post.frontmatter.alt || post.frontmatter.title}
                 />
 
                 <div class="card-body">

@@ -4,7 +4,7 @@ author: Rodrigo Turell
 date: Lunes, 08 de Setiembre, 2025
 title: 🎶 Deja Vu – Nuevo Single!
 img: 'https://i.ibb.co/TDy1f29L/BLACK-SMOKE-DEJA-VU.jpg'
-alt:  
+alt: Arte de tapa del single Deja Vu de Black Smoke
 description: Deja Vu es nuestro segundo single y a partir de hoy lo podés escuchar en tu plataforma de streaming favorita...
 ---
 
