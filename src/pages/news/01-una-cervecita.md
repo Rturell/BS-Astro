@@ -34,12 +34,12 @@ También vamos a crear un **¨Mejores Amigos”** en instagram con todos los que
 
 
 <style>
-    .secondary-btn {
+    .content .secondary-btn {
         border: 1px solid white;
         padding: 10px;
     }
 
-     .secondary-btn:hover {
+    .content .secondary-btn:hover {
         background-color: white;
         color: black;
         margin-top:10px;

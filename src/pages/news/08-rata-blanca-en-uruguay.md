@@ -51,11 +51,11 @@ description: Tenemos un notición para contarte! Vuelve Rata Blanca a Uruguay y 
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);
     }
 

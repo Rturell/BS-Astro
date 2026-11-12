@@ -29,7 +29,7 @@ Estuvimos hablando de la banda, sus comienzos, nuestros procesos de composición
 
 
 <style>
-    span, a  {
+    .content span, .content a {
         color: var(--color-link);
     }
 </style>

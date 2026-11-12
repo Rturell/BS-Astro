@@ -25,15 +25,15 @@ Nos vemos pronto!!!
 
 <style>
 
-    .object-top {
+    .content .object-top {
      object-position: center;
     }
 
-    p {
+    .content p {
      margin-bottom: 20px;
     }
 
-    span, a  {
+    .content span, .content a {
         color: var(--color-link);
     }
 

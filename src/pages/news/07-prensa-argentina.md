@@ -50,17 +50,17 @@ Agradecemos a Susana Galarza que en esta ocasión fue nuestra agente de prensa e
 
 <style>
 
-    iframe {
+    .content iframe {
         margin-block:30px;
     }
 
-    hr {
+    .content hr {
         margin-block: 50px;
         border-top: 1px solid gray;
         max-width:500px;
     }
 
-    .video-responsive {
+    .content .video-responsive {
 	height: 0;
 	overflow: hidden;
 	padding-bottom: 56.25%;
@@ -68,7 +68,7 @@ Agradecemos a Susana Galarza que en esta ocasión fue nuestra agente de prensa e
 	position: relative;
 	}
 
-    .video-responsive iframe, .video-responsive object, .video-responsive embed {
+    .content .video-responsive iframe, .content .video-responsive object, .content .video-responsive embed {
 	height: 100%;
 	left: 0;
 	position: absolute;

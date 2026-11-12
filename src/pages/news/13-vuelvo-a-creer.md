@@ -149,33 +149,33 @@ description: Hoy lanzamos Vuelvo a Creer! Un nuevo tema que abre otra puerta den
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-	.row.credits p {
+	.content .row.credits p {
 		margin-bottom: 0;
 	}
 
-	.row p {
+	.content .row p {
 		margin-bottom: 10px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);	
     }
 
-	img {
+	.content img {
      	margin-bottom: 20px;
 	}
 
-	h3 {
+	.content h3 {
 		font-size: 1.2rem;
 		font-weight: bold;
 		margin-bottom: 5px;
 	}
 
-	.lyric-container p {
+	.content .lyric-container p {
 		font-size: 1rem;
 	}
 

@@ -107,29 +107,29 @@ description: Deja Vu es nuestro segundo single y a partir de hoy lo podés escuc
 
 <style>
 
-	.row {
+	.content .row {
 		margin-bottom: 30px;
 	}
 
-	.row p {
+	.content .row p {
 		margin-bottom: 10px;
 	}
 
-    a  {
+    .content a {
         color: var(--color-link);	
     }
 
-	img {
+	.content img {
      	margin-bottom: 20px;
 	}
 
-	h3 {
+	.content h3 {
 		font-size: 1.2rem;
 		font-weight: bold;
 		margin-bottom: 5px;
 	}
 
-	.lyric-container p {
+	.content .lyric-container p {
 		font-size: 1rem;
 	}
 
