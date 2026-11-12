@@ -98,6 +98,7 @@ import {
     <a class="nav-link" href="/#shows">Shows</a>
     <a class="nav-link" href="/apoyos">Tu Apoyo</a>
     <a class="nav-link" href="/smokers">Fuego</a>
+    <!-- <a class="nav-link" href="/mapa">Mapa</a> -->
     <a class="nav-link" href="/#news">Noticias</a>
     <a class="nav-link" href="/#gallery">Fotos</a>
     <a class="nav-link" href="/#contacto">Contacto</a>
@@ -124,6 +125,7 @@ import {
       <a class="nav-link" href="/#shows" @click="open = false">Shows</a>
       <a class="nav-link" href="/apoyos" @click="open = false">Tu Apoyo</a>
       <a class="nav-link" href="/smokers" @click="open = false">Fuego</a>
+      <!-- <a class="nav-link" href="/mapa" @click="open = false">Mapa</a> -->
       <a class="nav-link" href="/#news" @click="open = false">Noticias</a>
       <a class="nav-link" href="/#gallery" @click="open = false">Fotos</a>
       <a class="nav-link" href="/#contacto" @click="open = false">Contacto</a>
@@ -140,8 +142,17 @@ import {
 
 <style>
   .nav-link {
-    @apply uppercase px-4 py-2 text-sm font-semibold rounded-lg
-           hover:bg-gray-200 hover:text-gray-900 transition;
+    @apply uppercase px-4 py-2 rounded-lg transition;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .nav-link:not(.bg-white) {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .nav-link:not(.bg-white):hover {
+    color: #ffffff;
   }
 
   [x-cloak] {
