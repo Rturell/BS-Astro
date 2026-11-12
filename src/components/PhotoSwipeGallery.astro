@@ -251,18 +251,29 @@ import todos from "../../src/img/gallery/todos.jpg";
   import PhotoSwipeLightbox from "photoswipe/lightbox";
   import "photoswipe/style.css";
 
-  const win = window as typeof window & { __photoswipeLightbox?: PhotoSwipeLightbox };
+  function initGallery() {
+    const win = window as typeof window & { __photoswipeLightbox?: PhotoSwipeLightbox };
 
-  if (win.__photoswipeLightbox) {
-    win.__photoswipeLightbox.destroy();
+    if (win.__photoswipeLightbox) {
+      win.__photoswipeLightbox.destroy();
+    }
+
+    const galleryEl = document.getElementById("gallery-photoswipe");
+    if (!galleryEl) return;
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#gallery-photoswipe",
+      children: "a",
+      pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+    win.__photoswipeLightbox = lightbox;
   }
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: "#gallery-photoswipe",
-    children: "a",
-    pswpModule: () => import("photoswipe"),
-  });
-
-  lightbox.init();
-  win.__photoswipeLightbox = lightbox;
+  // Astro's view transitions reuse (morph) unchanged DOM/script nodes
+  // across soft navigations instead of re-running this module script, so
+  // relying on top-level execution alone misses most repeat visits to the
+  // page. astro:page-load fires on every navigation, including the first.
+  document.addEventListener("astro:page-load", initGallery);
 </script>

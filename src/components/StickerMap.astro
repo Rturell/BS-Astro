@@ -36,6 +36,10 @@ const { stickers } = Astro.props;
     const L = window.L;
     const stickers = window.__STICKERS__ || [];
 
+    if (window.__stickerMap) {
+      window.__stickerMap.remove();
+    }
+
     const map = L.map("sticker-map", {
       center: [20, 0],
       zoom: 2,
@@ -73,6 +77,8 @@ const { stickers } = Astro.props;
         .addTo(map)
         .bindPopup(popupHtml);
     });
+
+    window.__stickerMap = map;
   }
 
   function initLightbox() {
@@ -103,9 +109,17 @@ const { stickers } = Astro.props;
     });
   }
 
-  loadLeaflet().then(() => {
-    initMap();
-    initLightbox();
+  // Astro's view transitions reuse (morph) unchanged DOM/script nodes
+  // across soft navigations instead of re-running this module script, so
+  // relying on top-level execution alone misses repeat visits to this
+  // page. astro:page-load fires on every navigation, including the first.
+  document.addEventListener("astro:page-load", () => {
+    const mapEl = document.getElementById("sticker-map");
+    if (!mapEl) return;
+    loadLeaflet().then(() => {
+      initMap();
+      initLightbox();
+    });
   });
 </script>
 
