@@ -80,8 +80,7 @@ const logos = [
   <section class="epk">
     <div class="epk-container">
       <header class="epk-header">
-        <Image src={logo} alt="Black Smoke" width={280} height={50} />
-        <p class="epk-tagline">Rock · Montevideo, Uruguay · desde 2014</p>
+        <h1 class="epk-title-label">EPK</h1>
         <a href="/black-smoke-epk.pdf" download class="epk-pdf-btn">
           Descargar EPK en PDF
         </a>
@@ -113,9 +112,8 @@ const logos = [
           Temuco.
         </p>
         <p>
-          A comienzos de 2024 iniciaron la grabación de su tercer disco de
-          estudio, del cual ya presentaron FUEGO, Deja Vu y Vuelvo a Creer.
-          En 2026 lanzaron "Nada Es Igual", un EP de cuatro temas.
+          En 2026 lanzaron "Nada Es Igual", un EP de cuatro temas que
+          adelanta lo que será su próximo disco de estudio.
         </p>
       </section>
 
@@ -288,10 +286,13 @@ const logos = [
     margin-bottom: 56px;
   }
 
-  .epk-tagline {
-    color: #cfcfcf;
-    margin-top: 12px;
-    letter-spacing: 0.04em;
+  .epk-title-label {
+    color: #fff;
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    letter-spacing: 0.08em;
+    line-height: 1;
   }
 
   .epk-pdf-btn {
