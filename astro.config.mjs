@@ -24,7 +24,7 @@ export default defineConfig({
     react(),
     tailwind(),
     sitemap({
-      filter: (page) => !page.includes('/mapa'),
+      filter: (page) => !page.includes('/mapa') && !page.includes('/epk'),
     }),
     clerk({
       localization: esUY,

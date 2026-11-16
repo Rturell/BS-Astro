@@ -5,7 +5,7 @@ date: Viernes, 11 de Diciembre, 2026
 title: Black Smoke en Bestiaria III!!!
 img: 'bestiaria-3.jpg'
 alt: Afiche de Bestiaria III, Black Smoke en Mandrágora Casa Cultural
-description: Nos vas a encontrar en Bestiaria III, el Viernes 11 de Diciembre en Mandrágora Casa Cultural, junto a Evilution, Insano, Irradiant, Borgia, Hotel Bella Muerte y Eroguro.
+description: Bestiaria III. Viernes 11 de Diciembre en Mandrágora Casa Cultural, junto a Evilution, Insano, Irradiant, Borgia, Hotel Bella Muerte y Eroguro.
 ---
 
 Hola amigos y amigas! Tenemos un nuevo show confirmado: **Bestiaria III**.
