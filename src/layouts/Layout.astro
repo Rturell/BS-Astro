@@ -10,12 +10,14 @@ interface Props {
   title: string;
   description?: string;
   image?: ImageMetadata;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Sitio Web de la banda de Rock and Roll, Black Smoke",
   image = ogSource,
+  noindex = false,
 } = Astro.props;
 
 const ogImage = await getImage({ src: image, width: 1200, height: 630 });
@@ -38,7 +40,7 @@ const structuredData = {
   },
   sameAs: [
     "https://www.instagram.com/blacksmokeuy",
-    "https://www.facebook.com/blacksmokeuy",
+    "https://www.facebook.com/blacksmokeuruguay/",
     "https://twitter.com/blacksmokeuy",
     "https://open.spotify.com/artist/0zasdvklx3VEacoHL4fjnQ",
     "https://www.youtube.com/blacksmokeuy",
@@ -56,6 +58,7 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />

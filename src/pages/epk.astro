@@ -1,0 +1,524 @@
+---
+import { getImage, Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Shows from "../components/Home/Shows.astro";
+import bandPhoto from "../img/epk/band-bw-01.jpg";
+import bandPhoto2 from "../img/epk/band-bw-02.jpg";
+import bandPhoto3 from "../img/epk/band-live-crowd.jpg";
+import logo from "../img/logo.png";
+import logoStackedWhite from "../img/epk/logo-stacked-white.png";
+import logoStackedBlack from "../img/epk/logo-stacked-black.png";
+import blackSmokeCover from "../img/BlackSmokeDisc.jpg";
+import hastaElFinalCover from "../img/HastaElFinalDisc.jpg";
+import nadaEsIgualCover from "../img/bs-NADA.jpg";
+import { tracks } from "../data/tracks";
+
+const discography = [
+  {
+    cover: blackSmokeCover,
+    title: "Black Smoke",
+    year: "2014",
+    type: "Álbum",
+    url: "https://blacksmoke.fanlink.tv/black-smoke",
+  },
+  {
+    cover: hastaElFinalCover,
+    title: "Hasta el Final",
+    year: "2019",
+    type: "Álbum · Nominado Mejor Álbum de Hard Rock y Metal, Premios Graffiti 2020",
+    url: "https://blacksmoke.fanlink.tv/HastaElFinal-BlackSmoke",
+  },
+  {
+    cover: nadaEsIgualCover,
+    title: "Nada Es Igual",
+    year: "2026",
+    type: "EP",
+    url: "https://blacksmoke.fanlink.tv/nada-es-igual",
+  },
+];
+
+const bandPhotoFull = await getImage({
+  src: bandPhoto,
+  width: 2400,
+  format: "jpeg",
+});
+const bandPhoto2Full = await getImage({
+  src: bandPhoto2,
+  width: 2400,
+  format: "jpeg",
+});
+const bandPhoto3Full = await getImage({
+  src: bandPhoto3,
+  width: 2400,
+  format: "jpeg",
+});
+const logoFull = await getImage({ src: logo, width: 1600, format: "png" });
+const logoStackedWhiteFull = await getImage({
+  src: logoStackedWhite,
+  width: 1600,
+  format: "png",
+});
+const logoStackedBlackFull = await getImage({
+  src: logoStackedBlack,
+  width: 1600,
+  format: "png",
+});
+
+const photos = [
+  { src: bandPhoto, full: bandPhotoFull, alt: "Black Smoke, foto de prensa 1", label: "Descargar foto 1" },
+  { src: bandPhoto2, full: bandPhoto2Full, alt: "Black Smoke, foto de prensa 2", label: "Descargar foto 2" },
+  { src: bandPhoto3, full: bandPhoto3Full, alt: "Black Smoke en vivo, foto de prensa 3", label: "Descargar foto 3" },
+];
+
+const logos = [
+  { src: logo, full: logoFull, alt: "Logo Black Smoke", label: "Descargar logo", lightBg: false },
+  { src: logoStackedWhite, full: logoStackedWhiteFull, alt: "Logo Black Smoke (blanco)", label: "Descargar logo (fondo oscuro)", lightBg: false },
+  { src: logoStackedBlack, full: logoStackedBlackFull, alt: "Logo Black Smoke (negro)", label: "Descargar logo (fondo claro)", lightBg: true },
+];
+---
+
+<Layout title="EPK | Black Smoke" noindex={true}>
+  <section class="epk">
+    <div class="epk-container">
+      <header class="epk-header">
+        <Image src={logo} alt="Black Smoke" width={280} height={50} />
+        <p class="epk-tagline">Rock · Montevideo, Uruguay · desde 2014</p>
+        <a href="/black-smoke-epk.pdf" download class="epk-pdf-btn">
+          Descargar EPK en PDF
+        </a>
+      </header>
+
+      <section class="epk-block">
+        <h2>Bio</h2>
+        <p>
+          Black Smoke es una banda de rock formada a mediados del 2014 por
+          Rodrigo Turell y Andres Nion. La banda se caracteriza por hacer
+          canciones contundentes donde se prioriza la calidad musical, las
+          letras y las buenas melodías. Se pueden encontrar raíces en Deep
+          Purple, Rata Blanca, Whitesnake, Guns and Roses, Led Zeppelin y
+          H.E.A.T entre otros.
+        </p>
+        <p>
+          En 2016 editaron su primer disco homónimo "Black Smoke", y en 2019
+          lanzaron su segundo álbum "Hasta el Final", nominado como Mejor
+          Álbum de Hard Rock y Metal en los Premios Graffiti 2020.
+        </p>
+        <p>
+          A lo largo de su trayectoria, han recorrido el circuito
+          montevideano y numerosos departamentos del interior del país,
+          presentándose también en Buenos Aires, Argentina. Compartieron
+          escenario con artistas internacionales como Rata Blanca
+          (Argentina), Mr. Big (EE.UU) y Enforcer (Suecia). En 2019 realizaron
+          una gira
+          por Chile que incluyó ciudades como Iquique, Santiago, Valdivia y
+          Temuco.
+        </p>
+        <p>
+          A comienzos de 2024 iniciaron la grabación de su tercer disco de
+          estudio, del cual ya presentaron FUEGO, Deja Vu y Vuelvo a Creer,
+          tres singles de su próximo lanzamiento.
+        </p>
+      </section>
+
+      <section class="epk-block">
+        <h2>Discografía</h2>
+        <div class="epk-discog-grid">
+          {
+            discography.map((release) => (
+              <a href={release.url} target="_blank" class="epk-discog-card">
+                <Image
+                  src={release.cover}
+                  alt={`Arte de tapa de ${release.title}`}
+                  width={300}
+                  height={300}
+                />
+                <div class="epk-discog-info">
+                  <p class="epk-discog-title">
+                    {release.title} <span>({release.year})</span>
+                  </p>
+                  <p class="epk-discog-type">{release.type}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="epk-block epk-shows">
+        <Shows />
+      </section>
+
+      <section class="epk-block">
+        <h2>Integrantes</h2>
+        <ul class="epk-members">
+          <li>Gonzalo Núñez — Voz</li>
+          <li>Andrés Nion — Guitarra y coros</li>
+          <li>Rodrigo Turell — Bajo y coros</li>
+          <li>Diego Spinelli — Batería</li>
+        </ul>
+      </section>
+
+      <section class="epk-block">
+        <h2>En vivo</h2>
+        <div class="epk-video">
+          <button
+            class="epk-video-facade"
+            data-video-id="EkZoFeufaSM"
+            aria-label="Reproducir Cuando Todo Cae, en vivo en MMBox"
+          >
+            <img
+              src="https://i.ytimg.com/vi/EkZoFeufaSM/hqdefault.jpg"
+              alt="Black Smoke en vivo en MMBox, Montevideo"
+              loading="lazy"
+            />
+            <span class="epk-play-icon">▶</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="epk-block">
+        <h2>Fotos (alta resolución)</h2>
+        <div class="epk-photo-grid">
+          {
+            photos.map((photo) => (
+              <div class="epk-photo-card">
+                <Image src={photo.src} alt={photo.alt} width={400} height={267} />
+                <a href={photo.full.src} download class="secondary-btn">
+                  {photo.label}
+                </a>
+              </div>
+            ))
+          }
+          {
+            logos.map((item) => (
+              <div class={`epk-photo-card epk-logo-card ${item.lightBg ? "epk-logo-card-light" : ""}`}>
+                <Image src={item.src} alt={item.alt} width={280} height={157} />
+                <a href={item.full.src} download class="secondary-btn">
+                  {item.label}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="epk-block">
+        <h2>Música (descargas mp3)</h2>
+        <ul class="epk-tracks">
+          {
+            tracks.map((track) => (
+              <li>
+                <span>{track.title}</span>
+                <a href={track.file} download class="secondary-btn">
+                  Descargar
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="epk-block">
+        <h2>Streaming y redes</h2>
+        <ul class="epk-links">
+          <li>
+            <a href="https://open.spotify.com/artist/0zasdvklx3VEacoHL4fjnQ" target="_blank">Spotify</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/blacksmokeuy" target="_blank">YouTube</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/blacksmokeuy" target="_blank">Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/blacksmokeuruguay/" target="_blank">Facebook</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/blacksmokeuy" target="_blank">X (Twitter)</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="epk-block">
+        <h2>Contacto / Booking</h2>
+        <p>
+          <a href="mailto:blacksmokeuy@gmail.com">blacksmokeuy@gmail.com</a>
+        </p>
+      </section>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  document.querySelectorAll(".epk-video-facade").forEach((facade) => {
+    facade.addEventListener("click", () => {
+      const videoId = facade.dataset.videoId;
+      const iframe = document.createElement("iframe");
+      iframe.className = "epk-video-frame";
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1`;
+      iframe.title = facade.getAttribute("aria-label") || "YouTube video";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  });
+</script>
+
+<style>
+  .epk {
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    color: #fff;
+    background:
+      radial-gradient(
+        800px circle at 10% -10%,
+        rgba(225, 29, 72, 0.18),
+        transparent 40%
+      ),
+      radial-gradient(
+        600px circle at 90% 20%,
+        rgba(255, 120, 0, 0.15),
+        transparent 45%
+      ),
+      linear-gradient(180deg, #0b0b0b 0%, #000 100%);
+  }
+
+  .epk-container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .epk-header {
+    margin-bottom: 56px;
+  }
+
+  .epk-tagline {
+    color: #cfcfcf;
+    margin-top: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .epk-pdf-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #e11d48, #ff7a18);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.4);
+  }
+
+  .epk-block {
+    margin-bottom: 48px;
+  }
+
+  .epk-block h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  .epk-block p {
+    color: #cfcfcf;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .epk-block a:not(.secondary-btn) {
+    color: #ff7a18;
+  }
+
+  .epk-block .secondary-btn {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  .epk-members {
+    padding: 0;
+    color: #cfcfcf;
+    line-height: 1.8;
+  }
+
+  .epk-links {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+  }
+
+  .epk-video {
+    max-width: 500px;
+  }
+
+  .epk-video-facade {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: #000;
+  }
+
+  .epk-video-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .epk-play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e11d48, #ff7a18);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.5);
+  }
+
+  .epk-discog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .epk-discog-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: inherit;
+  }
+
+  .epk-discog-card:hover {
+    text-decoration: none;
+  }
+
+  .epk-discog-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .epk-discog-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .epk-discog-title span {
+    color: #cfcfcf;
+    font-weight: 400;
+  }
+
+  .epk-discog-type {
+    color: #ff7a18;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .epk-discog-card:hover .epk-discog-title {
+    text-decoration: underline;
+  }
+
+  .epk-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .epk-photo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .epk-photo-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .epk-logo-card {
+    justify-content: flex-end;
+  }
+
+  .epk-logo-card img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #111;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .epk-logo-card-light img {
+    background: #fff;
+  }
+
+  .epk-photo-card .secondary-btn {
+    text-align: center;
+  }
+
+  .epk-tracks {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 480px;
+  }
+
+  .epk-tracks li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #cfcfcf;
+  }
+</style>
+
+<style is:global>
+  .epk-shows #shows {
+    background: transparent;
+    min-height: 0;
+  }
+
+  .epk-shows .container {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .epk-shows #shows h2 {
+    text-align: left;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px !important;
+    color: #fff;
+  }
+</style>
+
+<style is:global>
+  .epk-video-frame {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    border: none;
+  }
+</style>
