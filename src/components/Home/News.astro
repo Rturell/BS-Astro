@@ -1,6 +1,22 @@
 ---
 import { Image } from "astro:assets";
 const posts = await Astro.glob("../../pages/news/*.md");
+
+// News posts' "img" frontmatter is either a full remote URL (older posts,
+// hosted externally) or just a filename (newer posts, living in
+// src/img/news/) — resolve the latter to the actual optimizable image.
+const localNewsImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../../img/news/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+
+function resolvePostImage(img: string) {
+  if (img.startsWith("http")) return img;
+  const entry = Object.entries(localNewsImages).find(([path]) =>
+    path.endsWith(`/${img}`),
+  );
+  return entry ? entry[1].default : img;
+}
 ---
 
 <div id="news">
@@ -20,7 +36,7 @@ const posts = await Astro.glob("../../pages/news/*.md");
               <a href={post.url} class="card rounded-lg shadow-xl">
                 <Image
                   class="card-img object-cover object-top"
-                  src={post.frontmatter.img}
+                  src={resolvePostImage(post.frontmatter.img) as any}
                   width={500}
                   height={250}
                   loading="lazy"
