@@ -1,7 +1,6 @@
 ---
 import { getImage, Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Shows from "../components/Home/Shows.astro";
 import bandPhoto from "../img/epk/band-bw-01.jpg";
 import bandPhoto2 from "../img/epk/band-bw-02.jpg";
 import bandPhoto3 from "../img/epk/band-live-crowd.jpg";
@@ -115,8 +114,8 @@ const logos = [
         </p>
         <p>
           A comienzos de 2024 iniciaron la grabación de su tercer disco de
-          estudio, del cual ya presentaron FUEGO, Deja Vu y Vuelvo a Creer,
-          tres singles de su próximo lanzamiento.
+          estudio, del cual ya presentaron FUEGO, Deja Vu y Vuelvo a Creer.
+          En 2026 lanzaron "Nada Es Igual", un EP de cuatro temas.
         </p>
       </section>
 
@@ -142,10 +141,6 @@ const logos = [
             ))
           }
         </div>
-      </section>
-
-      <section class="epk-block epk-shows">
-        <Shows />
       </section>
 
       <section class="epk-block">
@@ -489,26 +484,6 @@ const logos = [
     justify-content: space-between;
     gap: 16px;
     color: #cfcfcf;
-  }
-</style>
-
-<style is:global>
-  .epk-shows #shows {
-    background: transparent;
-    min-height: 0;
-  }
-
-  .epk-shows .container {
-    padding: 0 !important;
-    max-width: none !important;
-  }
-
-  .epk-shows #shows h2 {
-    text-align: left;
-    font-size: 1.4rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 16px !important;
-    color: #fff;
   }
 </style>
 
